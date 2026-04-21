@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTROPHONIA — Sons do Universo em 432Hz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600&family=Raleway:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #020008;
+    --deep: #07001a;
+    --nebula: #12003a;
+    --violet: #6b21e8;
+    --violet-soft: #9b4dff;
+    --aurora: #c084fc;
+    --starlight: #e9d5ff;
+    --gold: #f59e0b;
+    --gold-soft: #fbbf24;
+    --white: #faf5ff;
+    --glow: rgba(107,33,232,0.4);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--white);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* ── STARS CANVAS ── */
+  #stars-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(to bottom, rgba(2,0,8,0.95), transparent);
+    backdrop-filter: blur(4px);
+  }
+
+  .nav-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    color: var(--aurora);
+    text-decoration: none;
+    text-shadow: 0 0 20px var(--violet);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--starlight);
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: opacity 0.3s, color 0.3s;
+  }
+
+  .nav-links a:hover { opacity: 1; color: var(--aurora); }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(ellipse, rgba(107,33,232,0.25) 0%, transparent 70%);
+    animation: pulse-glow 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; transform: translate(-50%,-50%) scale(1); }
+    50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.15); }
+  }
+
+  .hero-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    border: 1px solid rgba(245,158,11,0.4);
+    padding: 0.45rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    background: rgba(245,158,11,0.05);
+    animation: fade-up 1s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(3rem, 10vw, 7.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: 0.05em;
+    background: linear-gradient(135deg, var(--white) 0%, var(--aurora) 40%, var(--violet-soft) 70%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    animation: fade-up 1s 0.2s ease both;
+  }
+
+  .hero-sub {
+    font-size: clamp(0.85rem, 2vw, 1.05rem);
+    letter-spacing: 0.25em;
+    color: var(--aurora);
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fade-up 1s 0.4s ease both;
+  }
+
+  .hero-desc {
+    max-width: 560px;
+    font-size: 1rem;
+    line-height: 1.85;
+    color: rgba(233,213,255,0.7);
+    margin: 0 auto 3.5rem;
+    animation: fade-up 1s 0.6s ease both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fade-up 1s 0.8s ease both;
+  }
+
+  .btn-primary {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--violet), var(--violet-soft));
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 0 30px rgba(107,33,232,0.5);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(107,33,232,0.8);
+  }
+
+  .btn-ghost {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--aurora);
+    border: 1px solid rgba(192,132,252,0.4);
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--aurora);
+    background: rgba(192,132,252,0.08);
+  }
+
+  /* frequency visualizer */
+  .freq-visual {
+    position: absolute;
+    bottom: 3rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 40px;
+    opacity: 0.5;
+  }
+
+  .freq-bar {
+    width: 3px;
+    background: var(--violet-soft);
+    border-radius: 2px;
+    animation: wave-bar var(--dur) ease-in-out infinite alternate;
+  }
+
+  @keyframes wave-bar {
+    from { height: 4px; }
+    to   { height: var(--h); }
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--white), var(--aurora));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .divider {
+    width: 80px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--violet), transparent);
+    margin: 1.5rem auto;
+  }
+
+  /* ── ABOUT ── */
+  #sobre {
+    padding: 8rem 2rem;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, rgba(107,33,232,0.05), transparent);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 4rem auto 0;
+  }
+
+  .about-card {
+    background: rgba(107,33,232,0.08);
+    border: 1px solid rgba(107,33,232,0.2);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--violet-soft), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .about-card:hover::before { opacity: 1; }
+  .about-card:hover {
+    background: rgba(107,33,232,0.14);
+    border-color: rgba(107,33,232,0.4);
+    transform: translateY(-4px);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    color: var(--aurora);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .card-text {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: rgba(233,213,255,0.65);
+  }
+
+  /* ── ELEMENTOS ── */
+  #elementos {
+    padding: 8rem 2rem;
+    text-align: center;
+  }
+
+  .elements-ring {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    margin: 4rem auto;
+  }
+
+  .ring-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, var(--violet) 0%, var(--deep) 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-align: center;
+    box-shadow: 0 0 40px rgba(107,33,232,0.6);
+    z-index: 2;
+  }
+
+  .ring-orbit {
+    position: absolute;
+    top: 50%; left: 50%;
+    border-radius: 50%;
+    border: 1px solid rgba(107,33,232,0.3);
+    animation: rotate-orbit linear infinite;
+  }
+
+  .orbit-1 { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-duration: 20s; }
+  .orbit-2 { width: 310px; height: 310px; margin: -155px 0 0 -155px; animation-duration: 35s; animation-direction: reverse; }
+
+  @keyframes rotate-orbit {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .elem-node {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform-origin: 0 0;
+    width: 42px; height: 42px;
+    margin: -21px 0 0 -21px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+    cursor: default;
+    transition: all 0.3s;
+    font-family: 'Cinzel', serif;
+  }
+
+  .elem-node:hover { transform-origin: 0 0; filter: brightness(1.4); }
+  .elem-node span { font-size: 0.45rem; letter-spacing: 0.1em; color: var(--starlight); margin-top: 2px; }
+
+  .elements-legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .elem-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid;
+    opacity: 0.8;
+  }
+
+  /* ── ÁUDIOS / PLANOS ── */
+  #planos {
+    padding: 8rem 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(7,0,26,0.8), transparent);
+    text-align: center;
+  }
+
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1050px;
+    margin: 4rem auto 0;
+    align-items: start;
+  }
+
+  .plan-card {
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: left;
+  }
+
+  .plan-card:hover { transform: translateY(-6px); }
+
+  .plan-free {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .plan-premium {
+    background: linear-gradient(135deg, rgba(107,33,232,0.2), rgba(18,0,58,0.8));
+    border: 1px solid rgba(107,33,232,0.5);
+    box-shadow: 0 0 60px rgba(107,33,232,0.2);
+  }
+
+  .plan-best {
+    background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(18,0,58,0.8));
+    border: 1px solid rgba(245,158,11,0.4);
+    box-shadow: 0 0 60px rgba(245,158,11,0.15);
+  }
+
+  .plan-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+
+  .badge-free     { background: rgba(255,255,255,0.08); color: var(--starlight); }
+  .badge-premium  { background: rgba(107,33,232,0.3);   color: var(--aurora); }
+  .badge-best     { background: rgba(245,158,11,0.2);    color: var(--gold); }
+
+  .plan-popular {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    border: 1px solid rgba(245,158,11,0.4);
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+  }
+
+  .plan-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .plan-price {
+    font-family: 'Cinzel', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--aurora);
+    margin-bottom: 0.2rem;
+    line-height: 1;
+  }
+
+  .plan-period {
+    font-size: 0.78rem;
+    color: rgba(233,213,255,0.5);
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+  }
+
+  .plan-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .plan-features li {
+    font-size: 0.88rem;
+    color: rgba(233,213,255,0.75);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    line-height: 1.4;
+  }
+
+  .plan-features li .check { color: var(--aurora); font-size: 0.9rem; flex-shrink: 0; }
+  .plan-features li .x     { color: rgba(255,255,255,0.2); font-size: 0.9rem; flex-shrink: 0; }
+
+  .plan-btn {
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+  }
+
+  .btn-plan-free    { background: rgba(255,255,255,0.07); color: var(--starlight); border: 1px solid rgba(255,255,255,0.15); }
+  .btn-plan-premium { background: linear-gradient(135deg, var(--violet), var(--violet-soft)); color: var(--white); box-shadow: 0 0 25px rgba(107,33,232,0.4); }
+  .btn-plan-best    { background: linear-gradient(135deg, var(--gold), #d97706); color: var(--void); font-weight: 600; box-shadow: 0 0 25px rgba(245,158,11,0.3); }
+
+  .plan-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+  /* ── SIGNOS ── */
+  #signos {
+    padding: 8rem 2rem;
+    text-align: center;
+  }
+
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    margin: 4rem auto 0;
+  }
+
+  .sign-item {
+    background: rgba(107,33,232,0.06);
+    border: 1px solid rgba(107,33,232,0.18);
+    border-radius: 10px;
+    padding: 1.5rem 0.8rem;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sign-item::after {
+    content: 'Em breve';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(107,33,232,0.8);
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    color: var(--aurora);
+    padding: 0.3rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+
+  .sign-item:hover::after { transform: translateY(0); }
+  .sign-item:hover { border-color: rgba(107,33,232,0.4); background: rgba(107,33,232,0.12); }
+
+  .sign-symbol { font-size: 1.8rem; display: block; margin-bottom: 0.5rem; }
+  .sign-name   { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--starlight); opacity: 0.7; }
+  .sign-elem   { font-size: 0.55rem; color: var(--aurora); margin-top: 0.3rem; opacity: 0.6; }
+
+  /* ── SAMPLE PLAYER ── */
+  #preview {
+    padding: 8rem 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(107,33,232,0.06), transparent);
+    text-align: center;
+  }
+
+  .player-wrap {
+    max-width: 600px;
+    margin: 4rem auto 0;
+    background: rgba(7,0,26,0.7);
+    border: 1px solid rgba(107,33,232,0.3);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    backdrop-filter: blur(20px);
+  }
+
+  .player-track {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--aurora);
+    margin-bottom: 0.5rem;
+  }
+
+  .player-meta {
+    font-size: 0.8rem;
+    color: rgba(233,213,255,0.5);
+    letter-spacing: 0.2em;
+    margin-bottom: 2.5rem;
+  }
+
+  .waveform {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    margin-bottom: 2rem;
+  }
+
+  .wave-bar {
+    width: 3px;
+    background: linear-gradient(to top, var(--violet), var(--aurora));
+    border-radius: 2px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+
+  .wave-bar.active { opacity: 1; }
+
+  .player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ctrl-btn {
+    background: none;
+    border: none;
+    color: var(--starlight);
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .ctrl-btn:hover { opacity: 1; }
+
+  .ctrl-play {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--violet), var(--violet-soft));
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--white);
+    box-shadow: 0 0 25px rgba(107,33,232,0.5);
+    transition: all 0.3s;
+  }
+
+  .ctrl-play:hover { transform: scale(1.08); box-shadow: 0 0 40px rgba(107,33,232,0.8); }
+
+  .player-hz {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    opacity: 0.8;
+  }
+
+  /* ── CONTACT / NEWSLETTER ── */
+  #contato {
+    padding: 8rem 2rem;
+    text-align: center;
+  }
+
+  .contact-form {
+    max-width: 480px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .input-field {
+    background: rgba(107,33,232,0.08);
+    border: 1px solid rgba(107,33,232,0.25);
+    border-radius: 6px;
+    padding: 0.9rem 1.2rem;
+    color: var(--white);
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+  }
+
+  .input-field::placeholder { color: rgba(233,213,255,0.3); }
+  .input-field:focus { border-color: var(--violet-soft); }
+
+  textarea.input-field { resize: vertical; min-height: 120px; }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: rgba(233,213,255,0.4);
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem 2.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(107,33,232,0.15);
+  }
+
+  .footer-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.3em;
+    background: linear-gradient(135deg, var(--aurora), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    color: rgba(233,213,255,0.4);
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: rgba(233,213,255,0.4);
+    text-decoration: none;
+    transition: color 0.3s;
+    text-transform: uppercase;
+  }
+
+  .footer-links a:hover { color: var(--aurora); }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(233,213,255,0.2);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: 0.6rem; }
+    .plans-grid { grid-template-columns: 1fr; max-width: 360px; }
+    .signs-grid { grid-template-columns: repeat(4, 1fr); }
+    .elements-ring { width: 280px; height: 280px; }
+    .orbit-2 { width: 260px; height: 260px; margin: -130px 0 0 -130px; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links { display: none; }
+    .signs-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">✦ ASTROPHONIA</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#elementos">Elementos</a></li>
+    <li><a href="#signos">Signos</a></li>
+    <li><a href="#preview">Preview</a></li>
+    <li><a href="#planos">Planos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-badge">✦ Sons do Universo em 432 Hz ✦</div>
+  <h1 class="hero-title">ASTROPHONIA</h1>
+  <p class="hero-sub">Frequências Cósmicas para a Alma</p>
+  <p class="hero-desc">
+    Áudios criados em sintetizador, afinados em 432 Hz — a frequência do universo.
+    Sons baseados nos quatro elementos e nas energias dos signos do zodíaco,
+    desenvolvidos para harmonizar corpo, mente e espírito.
+  </p>
+  <div class="hero-cta">
+    <a href="#preview" class="btn-primary">▶ Ouvir Amostra</a>
+    <a href="#planos" class="btn-ghost">Ver Planos</a>
+  </div>
+
+  <!-- freq visualizer decorative -->
+  <div class="freq-visual" id="freq-visual"></div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <span class="section-label">✦ Sobre o Projeto</span>
+  <h2 class="section-title">O que é a ASTROPHONIA?</h2>
+  <div class="divider"></div>
+  <p style="max-width:600px;margin:0 auto;font-size:0.98rem;line-height:1.9;color:rgba(233,213,255,0.65);">
+    A ASTROPHONIA é uma plataforma sonora que traduz as energias do cosmos em frequências audíveis.
+    Cada áudio é criado artesanalmente em sintetizador, afinado em 432 Hz — a vibração natural
+    que ressoa em harmonia com a natureza e o universo.
+  </p>
+  <div class="about-grid reveal">
+    <div class="about-card">
+      <span class="card-icon">🎛️</span>
+      <div class="card-title">Sintetizador Artesanal</div>
+      <p class="card-text">Cada frequência é criada manualmente, com atenção à vibração, à intensidade e ao propósito energético de cada som.</p>
+    </div>
+    <div class="about-card">
+      <span class="card-icon">🔁</span>
+      <div class="card-title">432 Hz — A Frequência Natural</div>
+      <p class="card-text">432 Hz está em harmonia com a natureza e o cosmos. Diferente do padrão de 440 Hz, ela ressoa de forma mais orgânica com o corpo humano.</p>
+    </div>
+    <div class="about-card">
+      <span class="card-icon">🌙</span>
+      <div class="card-title">Elementos & Signos</div>
+      <p class="card-text">Cada elemento (Fogo, Terra, Ar, Água) tem sua base sonora única. A partir dela, criamos os sons específicos de cada signo do zodíaco.</p>
+    </div>
+    <div class="about-card">
+      <span class="card-icon">🔒</span>
+      <div class="card-title">Sem Dados Sensíveis</div>
+      <p class="card-text">Você escolhe seu plano e acessa os áudios. Sem coleta de dados pessoais desnecessários. Sua privacidade é prioridade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ELEMENTOS -->
+<section id="elementos">
+  <span class="section-label">✦ Os Quatro Elementos</span>
+  <h2 class="section-title">A Base Sonora</h2>
+  <div class="divider"></div>
+  <p style="max-width:540px;margin:0 auto;font-size:0.92rem;line-height:1.85;color:rgba(233,213,255,0.6);">
+    Cada elemento possui uma assinatura vibracional única. Esses sons fundamentais
+    são a raiz de toda a biblioteca ASTROPHONIA.
+  </p>
+
+  <div class="elements-ring reveal">
+    <!-- orbits -->
+    <div class="ring-orbit orbit-1"></div>
+    <div class="ring-orbit orbit-2"></div>
+
+    <!-- center -->
+    <div class="ring-center">432<br>Hz</div>
+
+    <!-- fire - top -->
+    <div class="elem-node" style="transform: translate(170px, 0px); background: radial-gradient(circle, rgba(239,68,68,0.3), transparent); border: 1px solid rgba(239,68,68,0.5);">
+      🔥<span>Fogo</span>
+    </div>
+    <!-- earth - right -->
+    <div class="elem-node" style="transform: translate(280px, 150px); background: radial-gradient(circle, rgba(34,197,94,0.3), transparent); border: 1px solid rgba(34,197,94,0.5);">
+      🌿<span>Terra</span>
+    </div>
+    <!-- air - bottom -->
+    <div class="elem-node" style="transform: translate(150px, 300px); background: radial-gradient(circle, rgba(96,165,250,0.3), transparent); border: 1px solid rgba(96,165,250,0.5);">
+      💨<span>Ar</span>
+    </div>
+    <!-- water - left -->
+    <div class="elem-node" style="transform: translate(10px, 150px); background: radial-gradient(circle, rgba(139,92,246,0.3), transparent); border: 1px solid rgba(139,92,246,0.5);">
+      🌊<span>Água</span>
+    </div>
+  </div>
+
+  <div class="elements-legend">
+    <span class="elem-badge" style="border-color:rgba(239,68,68,0.4);color:#fca5a5;">🔥 Fogo — Energia, Ação, Transformação</span>
+    <span class="elem-badge" style="border-color:rgba(34,197,94,0.4);color:#86efac;">🌿 Terra — Estabilidade, Corpo, Abundância</span>
+    <span class="elem-badge" style="border-color:rgba(96,165,250,0.4);color:#93c5fd;">💨 Ar — Mente, Comunicação, Movimento</span>
+    <span class="elem-badge" style="border-color:rgba(139,92,246,0.4);color:#c4b5fd;">🌊 Água — Emoção, Intuição, Cura</span>
+  </div>
+</section>
+
+<!-- SIGNOS -->
+<section id="signos">
+  <span class="section-label">✦ Zodíaco Sonoro</span>
+  <h2 class="section-title">Os 12 Signos</h2>
+  <div class="divider"></div>
+  <p style="max-width:500px;margin:0 auto;font-size:0.92rem;line-height:1.85;color:rgba(233,213,255,0.6);">
+    Cada signo terá seu áudio exclusivo, construído sobre a base do elemento que o governa.
+    A biblioteca estará disponível em fases.
+  </p>
+
+  <div class="signs-grid reveal">
+    <div class="sign-item"><span class="sign-symbol">♈</span><div class="sign-name">Áries</div><div class="sign-elem">🔥 Fogo</div></div>
+    <div class="sign-item"><span class="sign-symbol">♉</span><div class="sign-name">Touro</div><div class="sign-elem">🌿 Terra</div></div>
+    <div class="sign-item"><span class="sign-symbol">♊</span><div class="sign-name">Gêmeos</div><div class="sign-elem">💨 Ar</div></div>
+    <div class="sign-item"><span class="sign-symbol">♋</span><div class="sign-name">Câncer</div><div class="sign-elem">🌊 Água</div></div>
+    <div class="sign-item"><span class="sign-symbol">♌</span><div class="sign-name">Leão</div><div class="sign-elem">🔥 Fogo</div></div>
+    <div class="sign-item"><span class="sign-symbol">♍</span><div class="sign-name">Virgem</div><div class="sign-elem">🌿 Terra</div></div>
+    <div class="sign-item"><span class="sign-symbol">♎</span><div class="sign-name">Libra</div><div class="sign-elem">💨 Ar</div></div>
+    <div class="sign-item"><span class="sign-symbol">♏</span><div class="sign-name">Escorpião</div><div class="sign-elem">🌊 Água</div></div>
+    <div class="sign-item"><span class="sign-symbol">♐</span><div class="sign-name">Sagitário</div><div class="sign-elem">🔥 Fogo</div></div>
+    <div class="sign-item"><span class="sign-symbol">♑</span><div class="sign-name">Capricórnio</div><div class="sign-elem">🌿 Terra</div></div>
+    <div class="sign-item"><span class="sign-symbol">♒</span><div class="sign-name">Aquário</div><div class="sign-elem">💨 Ar</div></div>
+    <div class="sign-item"><span class="sign-symbol">♓</span><div class="sign-name">Peixes</div><div class="sign-elem">🌊 Água</div></div>
+  </div>
+</section>
+
+<!-- PREVIEW PLAYER -->
+<section id="preview">
+  <span class="section-label">✦ Experimente</span>
+  <h2 class="section-title">Ouça uma Amostra</h2>
+  <div class="divider"></div>
+  <p style="max-width:480px;margin:0 auto;font-size:0.92rem;line-height:1.85;color:rgba(233,213,255,0.6);">
+    Esta é uma amostra dos áudios ASTROPHONIA. Use fones de ouvido para a melhor experiência.
+  </p>
+
+  <div class="player-wrap reveal">
+    <div class="player-track">Elemento Primordial — Água</div>
+    <div class="player-meta">432 Hz · 3:20 · Meditação · AMOSTRA GRATUITA</div>
+
+    <div class="waveform" id="waveform"></div>
+
+    <div class="player-controls">
+      <button class="ctrl-btn" title="Anterior">⏮</button>
+      <button class="ctrl-play" id="play-btn" onclick="togglePlay(this)">▶</button>
+      <button class="ctrl-btn" title="Próximo">⏭</button>
+    </div>
+    <div class="player-hz">✦ 432 Hz · Modo Meditação ✦</div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos">
+  <span class="section-label">✦ Assinatura</span>
+  <h2 class="section-title">Escolha seu Plano</h2>
+  <div class="divider"></div>
+  <p style="max-width:500px;margin:0 auto;font-size:0.92rem;line-height:1.85;color:rgba(233,213,255,0.6);">
+    Acesse a biblioteca de frequências cósmicas no plano que combina com a sua jornada.
+  </p>
+
+  <div class="plans-grid">
+    <!-- FREE -->
+    <div class="plan-card plan-free reveal">
+      <span class="plan-badge badge-free">Free</span>
+      <div class="plan-name">Éter</div>
+      <div class="plan-price">R$0</div>
+      <div class="plan-period">para sempre gratuito</div>
+      <ul class="plan-features">
+        <li><span class="check">✦</span> 1 áudio de amostra por elemento</li>
+        <li><span class="check">✦</span> Acesso a 4 faixas (uma por elemento)</li>
+        <li><span class="check">✦</span> Qualidade padrão (128kbps)</li>
+        <li><span class="x">✗</span> Signos do zodíaco</li>
+        <li><span class="x">✗</span> Alta resolução (320kbps)</li>
+        <li><span class="x">✗</span> Novos lançamentos antecipados</li>
+        <li><span class="x">✗</span> Download dos arquivos</li>
+      </ul>
+      <button class="plan-btn btn-plan-free">Começar Grátis</button>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="plan-card plan-premium reveal">
+      <span class="plan-popular">★ POPULAR</span>
+      <span class="plan-badge badge-premium">Premium</span>
+      <div class="plan-name">Cosmos</div>
+      <div class="plan-price" style="color:var(--aurora);">R$29</div>
+      <div class="plan-period">por mês · cancele quando quiser</div>
+      <ul class="plan-features">
+        <li><span class="check">✦</span> Todos os áudios dos 4 elementos</li>
+        <li><span class="check">✦</span> 6 signos do zodíaco (fase 1)</li>
+        <li><span class="check">✦</span> Alta qualidade (320kbps)</li>
+        <li><span class="check">✦</span> Novos lançamentos mensais</li>
+        <li><span class="check">✦</span> Download para uso offline</li>
+        <li><span class="x">✗</span> Todos os 12 signos</li>
+        <li><span class="x">✗</span> Sessões personalizadas</li>
+      </ul>
+      <button class="plan-btn btn-plan-premium">Assinar Cosmos</button>
+    </div>
+
+    <!-- BEST -->
+    <div class="plan-card plan-best reveal">
+      <span class="plan-badge badge-best">Best</span>
+      <div class="plan-name">Infinito</div>
+      <div class="plan-price" style="color:var(--gold);">R$59</div>
+      <div class="plan-period">por mês · acesso total</div>
+      <ul class="plan-features">
+        <li><span class="check" style="color:var(--gold);">✦</span> Toda a biblioteca completa</li>
+        <li><span class="check" style="color:var(--gold);">✦</span> Todos os 12 signos + elementos</li>
+        <li><span class="check" style="color:var(--gold);">✦</span> Qualidade máxima (FLAC/WAV)</li>
+        <li><span class="check" style="color:var(--gold);">✦</span> Lançamentos antecipados exclusivos</li>
+        <li><span class="check" style="color:var(--gold);">✦</span> Download ilimitado</li>
+        <li><span class="check" style="color:var(--gold);">✦</span> Sessões futuras personalizadas</li>
+      </ul>
+      <button class="plan-btn btn-plan-best">Assinar Infinito</button>
+    </div>
+  </div>
+
+  <p style="margin-top:3rem;font-size:0.78rem;color:rgba(233,213,255,0.3);letter-spacing:0.1em;">
+    ✦ Pagamentos processados com segurança · Sem fidelidade · Cancele quando quiser
+  </p>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <span class="section-label">✦ Contato</span>
+  <h2 class="section-title">Entre em Contato</h2>
+  <div class="divider"></div>
+  <p style="max-width:460px;margin:0 auto;font-size:0.92rem;line-height:1.85;color:rgba(233,213,255,0.6);">
+    Dúvidas, sugestões ou quer ser avisado dos próximos lançamentos?
+    Deixe sua mensagem — respondo com carinho.
+  </p>
+
+  <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+    <input class="input-field" type="text" placeholder="Seu nome (opcional)" autocomplete="off">
+    <input class="input-field" type="email" placeholder="Seu e-mail *" required autocomplete="off">
+    <select class="input-field" style="cursor:pointer;">
+      <option value="" disabled selected>Assunto</option>
+      <option>Quero saber mais sobre os planos</option>
+      <option>Dúvida sobre os áudios</option>
+      <option>Sugestão de frequência/signo</option>
+      <option>Parceria ou colaboração</option>
+      <option>Outro</option>
+    </select>
+    <textarea class="input-field" placeholder="Sua mensagem..."></textarea>
+    <button type="submit" class="btn-primary" style="width:100%;padding:1rem;">Enviar Mensagem ✦</button>
+    <p class="form-note">✦ Sem spam. Seus dados ficam apenas entre nós.</p>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ASTROPHONIA</div>
+  <div class="footer-tagline">Sons do Universo em 432 Hz</div>
+  <div class="footer-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#elementos">Elementos</a>
+    <a href="#signos">Signos</a>
+    <a href="#planos">Planos</a>
+    <a href="#contato">Contato</a>
+  </div>
+  <div class="footer-copy">© 2025 ASTROPHONIA · Todos os direitos reservados · Feito com ✦ e 432 Hz</div>
+</footer>
+
+<script>
+/* ── STARS ── */
+(function() {
+  const canvas = document.getElementById('stars-canvas');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  let W, H;
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    const count = Math.floor((W * H) / 4000);
+    for (let i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.4 + 0.2,
+        a: Math.random(),
+        speed: Math.random() * 0.004 + 0.001,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+    // nebula blobs
+    stars._nebulas = [
+      { x: W*0.2, y: H*0.3, r: 300, c: 'rgba(107,33,232,0.06)' },
+      { x: W*0.8, y: H*0.7, r: 250, c: 'rgba(192,132,252,0.04)' },
+      { x: W*0.5, y: H*0.1, r: 200, c: 'rgba(107,33,232,0.05)' },
+    ];
+  }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (stars._nebulas) {
+      stars._nebulas.forEach(n => {
+        const g = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+        g.addColorStop(0, n.c); g.addColorStop(1,'transparent');
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2); ctx.fill();
+      });
+    }
+    stars.forEach(s => {
+      const a = 0.3 + 0.7 * (0.5 + 0.5*Math.sin(t*s.speed + s.phase));
+      ctx.globalAlpha = a * s.a;
+      ctx.fillStyle = '#e9d5ff';
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { resize(); initStars(); });
+  resize(); initStars(); requestAnimationFrame(draw);
+})();
+
+/* ── FREQ BARS HERO ── */
+(function() {
+  const wrap = document.getElementById('freq-visual');
+  for (let i = 0; i < 40; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'freq-bar';
+    const h = Math.random()*28+6;
+    bar.style.cssText = `--h:${h}px;--dur:${(Math.random()*0.8+0.5).toFixed(2)}s;height:${h}px;animation-delay:${(Math.random()*0.8).toFixed(2)}s`;
+    wrap.appendChild(bar);
+  }
+})();
+
+/* ── WAVEFORM ── */
+(function() {
+  const wrap = document.getElementById('waveform');
+  for (let i = 0; i < 60; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'wave-bar';
+    const h = Math.round(Math.abs(Math.sin(i*0.3+0.5))*48+6);
+    bar.style.height = h+'px';
+    wrap.appendChild(bar);
+  }
+})();
+
+/* ── PLAYER ── */
+let playing = false;
+let waveInterval = null;
+
+function togglePlay(btn) {
+  playing = !playing;
+  btn.textContent = playing ? '⏸' : '▶';
+  const bars = document.querySelectorAll('.wave-bar');
+  if (playing) {
+    let t = 0;
+    waveInterval = setInterval(() => {
+      bars.forEach((b, i) => {
+        b.classList.toggle('active', i === Math.floor(t) % bars.length || i === (Math.floor(t)+1) % bars.length);
+      });
+      t += 0.4;
+    }, 80);
+  } else {
+    clearInterval(waveInterval);
+    document.querySelectorAll('.wave-bar').forEach(b => b.classList.remove('active'));
+  }
+}
+
+/* ── SCROLL REVEAL ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── FORM ── */
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  btn.textContent = '✦ Mensagem Enviada!';
+  btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+  setTimeout(() => {
+    btn.textContent = 'Enviar Mensagem ✦';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+</body>
+</html>

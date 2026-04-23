@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrophonia | Frequências de Cura</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* CSS INTEGRADO - A ALMA DO LAYOUT */
+        :root {
+            --ouro: #d4af37;
+            --fundo-dark: #0a0a0c;
+            --card-fundo: #16161a;
+            --texto-claro: #e0e0e0;
+            --transicao: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--fundo-dark);
+            color: var(--texto-claro);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* MENU ESTÁTICO SUPERIOR */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 12, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--ouro);
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transicao);
+        }
+
+        .nav-links a:hover { color: var(--ouro); }
+
+        .social-header { display: flex; gap: 15px; align-items: center; }
+        
+        .social-header i { 
+            color: var(--ouro); 
+            font-size: 1.2rem; 
+            transition: var(--transicao);
+        }
+
+        .social-header i:hover { transform: scale(1.2); color: white; }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--ouro);
+            color: var(--ouro);
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            transition: var(--transicao);
+        }
+
+        .lang-btn:hover { background: var(--ouro); color: black; }
+
+        /* HERO SECTION */
+        #home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0c 100%);
+            padding: 0 10%;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--ouro));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* GRID DE PRODUTOS */
+        .container { padding: 100px 5%; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-fundo);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 2px;
+            text-align: center;
+            transition: var(--transicao);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--ouro);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card h2 { font-family: 'Playfair Display', serif; color: var(--ouro); margin-bottom: 10px; }
+        .card h4 { font-size: 0.7rem; letter-spacing: 3px; color: #888; margin-bottom: 20px; text-transform: uppercase; }
+        .card p { font-size: 0.9rem; color: #bbb; margin-bottom: 30px; font-style: italic; }
+
+        .btn-bandcamp {
+            padding: 12px 25px;
+            border: 1px solid var(--ouro);
+            color: var(--ouro);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: var(--transicao);
+        }
+
+        .btn-bandcamp:hover { background: var(--ouro); color: black; }
+
+        /* FOOTER */
+        footer {
+            padding: 50px 5%;
+            background: #050505;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+        }
+
+        .footer-logo { margin-bottom: 20px; opacity: 0.6; }
+        .footer-links { margin-bottom: 20px; font-size: 0.8rem; }
+        .footer-links a { color: #666; text-decoration: none; margin: 0 10px; }
+
+        /* LINGUAGEM CONTROLE */
+        .lang-content { display: none; }
+        .active-lang { display: block; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ASTROPHONIA</div>
+        <div class="social-header">
+            <a href="https://wa.me/5511971640775" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/astrophonia" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:contato@astrophonia.com"><i class="far fa-envelope"></i></a>
+            |
+            <button class="lang-btn" onclick="setLang('pt')">PT</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('it')">IT</button>
+        </div>
+    </header>
+
+    <section id="home">
+        <div id="pt-hero" class="lang-content active-lang">
+            <h1>Harmonia da Alma</h1>
+            <p>Frequências de cura baseadas em experiências reais de vida.</p>
+        </div>
+        <div id="en-hero" class="lang-content">
+            <h1>Soul Harmony</h1>
+            <p>Healing frequencies based on real life experiences.</p>
+        </div>
+        <div id="it-hero" class="lang-content">
+            <h1>Armonia dell'Anima</h1>
+            <p>Frequenze di guarigione basate su esperienze di vita reale.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h4>432 Hz - Aterramento</h4>
+                <div class="lang-content active-lang pt">
+                    <h2>Raízes da Paz</h2>
+                    <p>"Um retorno ao centro quando tudo parecia caos."</p>
+                </div>
+                <div class="lang-content en">
+                    <h2>Roots of Peace</h2>
+                    <p>"A return to the center when everything seemed like chaos."</p>
+                </div>
+                <div class="lang-content it">
+                    <h2>Radici della Pace</h2>
+                    <p>"Un ritorno al centro quando tutto sembrava caos."</p>
+                </div>
+                <a href="#" class="btn-bandcamp">Ouvir no Bandcamp</a>
+            </div>
+
+            <div class="card">
+                <h4>528 Hz - Milagre</h4>
+                <div class="lang-content active-lang pt">
+                    <h2>Coração Aberto</h2>
+                    <p>"A frequência do amor que restaurou minha esperança."</p>
+                </div>
+                <div class="lang-content en">
+                    <h2>Open Heart</h2>
+                    <p>"The frequency of love that restored my hope."</p>
+                </div>
+                <div class="lang-content it">
+                    <h2>Cuore Aperto</h2>
+                    <p>"La frequenza dell'amore che ha ridato speranza."</p>
+                </div>
+                <a href="#" class="btn-bandcamp">Ouvir no Bandcamp</a>
+            </div>
+
+            <div class="card">
+                <h4>963 Hz - Conexão Divina</h4>
+                <div class="lang-content active-lang pt">
+                    <h2>Luz Estelar</h2>
+                    <p>"O despertar da consciência suprema."</p>
+                </div>
+                <div class="lang-content en">
+                    <h2>Stellar Light</h2>
+                    <p>"The awakening of supreme consciousness."</p>
+                </div>
+                <div class="lang-content it">
+                    <h2>Luce Stellare</h2>
+                    <p>"Il risveglio della coscienza suprema."</p>
+                </div>
+                <a href="#" class="btn-bandcamp">Ouvir no Bandcamp</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <i class="fab fa-github"></i> Desenvolvido por <strong>LiVRe Web Studium</strong>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a> | <a href="mailto:contato@astrophonia.com">Suporte</a>
+        </div>
+        <p style="font-size: 10px; color: #444;">© 2026 ASTROPHONIA - Frequências que curam.</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            // Esconde todos os conteúdos de língua
+            const contents = document.querySelectorAll('.lang-content');
+            contents.forEach(c => c.classList.remove('active-lang'));
+            
+            // Mostra os conteúdos da língua selecionada
+            const selected = document.querySelectorAll('.' + lang);
+            selected.forEach(s => s.classList.add('active-lang'));
+            
+            // Caso especial para o Hero que usa IDs
+            document.getElementById('pt-hero').classList.remove('active-lang');
+            document.getElementById('en-hero').classList.remove('active-lang');
+            document.getElementById('it-hero').classList.remove('active-lang');
+            document.getElementById(lang + '-hero').classList.add('active-lang');
+        }
+    </script>
+</body>
+</html>

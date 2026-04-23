@@ -1,0 +1,84 @@
+:root {
+    --bg-color: #0b0e14;
+    --card-bg: #1a1f29;
+    --accent: #d4af37; /* Dourado elegante */
+    --text: #ffffff;
+    --text-dim: #a0a0a0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+#nav-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(11, 14, 20, 0.95);
+    border-bottom: 1px solid #333;
+    z-index: 1000;
+}
+
+.logo { font-weight: bold; letter-spacing: 3px; font-size: 1.5rem; color: var(--accent); }
+
+nav a { color: white; text-decoration: none; margin-right: 20px; transition: 0.3s; }
+nav a:hover { color: var(--accent); }
+
+.social-icons i { margin: 0 10px; font-size: 1.2rem; cursor: pointer; color: var(--text); }
+.social-icons i:hover { color: var(--accent); }
+
+#hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('sua-imagem-fundo.jpg');
+    background-size: cover;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 4rem 5%;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.card:hover { transform: translateY(-10px); border-color: var(--accent); }
+
+.frequency { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
+
+.btn-buy {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--accent);
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+footer {
+    padding: 3rem 5%;
+    background: #05070a;
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+}

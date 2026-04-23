@@ -4,312 +4,297 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AstroPhonia | Sonic Soul Therapy</title>
-    <link rel="icon" type="image/jpg" href="favicon.jpg">
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-dark: #050813;
-            --bg-nav: #121E3D;
+            --bg-deep: #050813;
             --accent-gold: #C5A069;
-            --text-ice: #E8E8E8;
-            --aura-purple: #2C1E3D;
-            --transition: all 0.5s ease;
+            --text-white: #f4f4f4;
+            --gradient-cosmic: radial-gradient(circle at center, rgba(44, 30, 61, 0.4) 0%, rgba(5, 8, 19, 1) 80%);
+            --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-dark);
-            background-image: linear-gradient(rgba(5, 8, 19, 0.8), rgba(5, 8, 19, 0.8)), url('ap-bg1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--text-ice);
+            background-color: var(--bg-deep);
+            color: var(--text-white);
             font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            line-height: 1.8;
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* MENU ESTÁTICO SUPERIOR */
+        /* BACKGROUND FIXO COM GRADIENTE DE IMPACTO */
+        .cosmic-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--gradient-cosmic), url('ap-bg1.jpg') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        /* MODAL DE PRIVACIDADE (BLOQUEIO INICIAL) */
+        #privacy-gate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-deep);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gate-content {
+            max-width: 500px;
+            border: 1px solid var(--accent-gold);
+            padding: 40px;
+            background: rgba(18, 30, 61, 0.9);
+        }
+
+        .gate-content h2 { font-family: 'Cinzel', serif; color: var(--accent-gold); margin-bottom: 20px; }
+        .btn-accept {
+            background: var(--accent-gold);
+            color: var(--bg-deep);
+            border: none;
+            padding: 15px 40px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* HEADER */
         header {
             position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(18, 30, 61, 0.9);
-            backdrop-filter: blur(10px);
+            top: 0; width: 100%;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 5%;
+            background: rgba(5, 8, 19, 0.8);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(197, 160, 105, 0.3);
         }
 
-        .header-left { display: flex; align-items: center; gap: 15px; }
-        .header-logo { height: 30px; }
-        
-        .nav-buttons a {
-            color: var(--text-ice);
-            text-decoration: none;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0 10px;
-            transition: var(--transition);
-        }
-        .nav-buttons a:hover { color: var(--accent-gold); }
-
-        .header-right { display: flex; align-items: center; gap: 20px; }
-        .social-icons i { color: var(--accent-gold); font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
-        .social-icons i:hover { transform: scale(1.2); color: white; }
+        .social-links a { color: var(--accent-gold); margin-left: 15px; font-size: 1.2rem; transition: 0.3s; }
+        .social-links a:hover { color: white; }
 
         .lang-switcher button {
-            background: transparent;
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
-            padding: 2px 6px;
-            font-size: 0.6rem;
-            cursor: pointer;
-            border-radius: 3px;
+            background: none; border: 1px solid var(--accent-gold);
+            color: var(--accent-gold); padding: 4px 10px;
+            cursor: pointer; font-size: 0.7rem; margin-left: 5px;
         }
-        .lang-switcher button.active { background: var(--accent-gold); color: var(--bg-dark); }
+        .lang-switcher button.active { background: var(--accent-gold); color: black; }
 
-        /* SEÇÃO HERO */
+        /* HERO SECTION */
         .hero {
-            padding: 150px 10% 80px;
-            max-width: 900px;
-            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
         }
 
-        .main-logo { width: 180px; margin-bottom: 30px; }
-        
-        h1, h2, h3 { font-family: 'Cinzel', serif; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 4px; }
-        
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
-        .hero p { font-weight: 300; font-size: 1.1rem; color: #ccc; }
+        .hero img { width: 350px; max-width: 80%; margin-bottom: 30px; filter: drop-shadow(0 0 20px rgba(197, 160, 105, 0.3)); }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: 8px; color: var(--accent-gold); }
 
-        /* BOTÕES DE NAVEGAÇÃO INTERNA */
-        .jump-nav { margin: 40px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn-outline {
-            padding: 10px 25px;
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            transition: var(--transition);
-            text-transform: uppercase;
-        }
-        .btn-outline:hover { background: var(--accent-gold); color: var(--bg-dark); }
-
-        /* SEÇÕES DE TEXTO */
-        section { padding: 80px 10%; max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(197, 160, 105, 0.1); }
-        .section-title { margin-bottom: 40px; font-size: 1.8rem; }
-        .content-text { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; font-weight: 300; }
-
-        /* CARDS DE ÁUDIO (O que você não conseguiu no Carrd) */
-        .audio-grid {
+        /* GRID DE PRODUTOS */
+        .products-section { padding: 100px 5%; text-align: center; }
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+            gap: 40px;
+            justify-content: center;
+            margin-top: 60px;
         }
 
         .card {
-            background: rgba(44, 30, 61, 0.2);
-            border: 1px solid var(--accent-gold);
-            padding: 40px 30px;
-            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 160, 105, 0.2);
+            padding: 30px;
+            transition: var(--transition-smooth);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .card:hover { 
-            background: rgba(44, 30, 61, 0.4); 
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(197, 160, 105, 0.2);
+
+        .card:hover { border-color: var(--accent-gold); background: rgba(197, 160, 105, 0.05); transform: translateY(-10px); }
+
+        .card-img { width: 100%; height: 200px; background: #111; margin-bottom: 20px; object-fit: cover; }
+        
+        .card h3 { font-family: 'Cinzel', serif; color: var(--accent-gold); margin-bottom: 10px; }
+        .card .freq { font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 15px; opacity: 0.7; }
+        .card p { font-size: 0.85rem; font-weight: 200; margin-bottom: 25px; min-height: 80px; }
+
+        /* AUDIO PLAYER ANIMADO */
+        .audio-preview {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
-        .card-icon { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; }
-        .card h3 { font-size: 1.3rem; margin-bottom: 5px; }
-        .card .freq-tag { color: var(--accent-gold); font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 20px; opacity: 0.8; }
-        .card p { font-size: 0.85rem; font-style: italic; color: #bbb; margin-bottom: 30px; }
+        .play-btn { color: var(--accent-gold); cursor: pointer; font-size: 1.5rem; }
+        
+        .waves {
+            display: flex; gap: 3px; height: 20px; align-items: center;
+        }
+        .wave-bar { width: 3px; height: 100%; background: var(--accent-gold); animation: pulse 1s infinite ease-in-out; }
+        .wave-bar:nth-child(2) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes pulse {
+            0%, 100% { height: 5px; }
+            50% { height: 20px; }
+        }
 
         .btn-buy {
-            margin-top: auto;
             width: 100%;
             padding: 12px;
             border: 1px solid var(--accent-gold);
             color: var(--accent-gold);
             text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 100px 10% 50px;
-            background: rgba(5, 8, 19, 0.95);
             font-size: 0.8rem;
-            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
+        .btn-buy:hover { background: var(--accent-gold); color: black; }
 
-        .footer-line { width: 50px; height: 1px; background: var(--accent-gold); margin: 30px auto; }
-        .footer-legal a { color: #666; text-decoration: none; margin: 0 10px; }
-        .footer-credit { margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        footer { padding: 50px; text-align: center; border-top: 1px solid rgba(197, 160, 105, 0.1); font-size: 0.7rem; color: #555; }
 
-        /* CONTROLE DE IDIOMA */
+        /* TRADUÇÃO */
         .lang-node { display: none; }
-        .active-lang { display: block !important; }
-        .active-flex { display: flex !important; }
+        .active { display: block !important; }
 
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-left">
-            <img src="ap-logo-transparent.png" class="header-logo" alt="Logo">
-            <div class="nav-buttons">
-                <a href="#audios">Audios</a>
-                <a href="mailto:contato@astrophonia.com">Contact</a>
-            </div>
+    <div class="cosmic-bg"></div>
+
+    <div id="privacy-gate">
+        <div class="gate-content">
+            <h2 class="lang-node active en">Sanctuary Entrance</h2>
+            <h2 class="lang-node pt">Entrada do Santuário</h2>
+            <h2 class="lang-node it">Ingresso al Santuario</h2>
+            
+            <p class="lang-node active en">By entering, you agree to our Cookie and Privacy Policy. We value your soul's peace and your data's safety.</p>
+            <p class="lang-node pt">Ao entrar, você concorda com nossa Política de Cookies e Privacidade. Valorizamos a paz da sua alma e a segurança dos seus dados.</p>
+            <p class="lang-node it">Entrando, accetti la nostra Cookie e Privacy Policy. Valorizziamo la pace della tua anima e la sicurezza dei tuoi dati.</p>
+            
+            <button class="btn-accept" onclick="acceptGate()">Enter / Entrar</button>
         </div>
-        <div class="header-right">
-            <div class="social-icons">
-                <a href="https://wa.me/5511971640775" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/astrophonia" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="lang-switcher">
-                <button id="btn-en" onclick="changeLang('en')" class="active">EN</button>
-                <button id="btn-pt" onclick="changeLang('pt')">PT</button>
-                <button id="btn-it" onclick="changeLang('it')">IT</button>
-            </div>
+    </div>
+
+    <header>
+        <div class="lang-switcher">
+            <button id="b-en" onclick="setLang('en')" class="active">EN</button>
+            <button id="b-pt" onclick="setLang('pt')">PT</button>
+            <button id="b-it" onclick="setLang('it')">IT</button>
+        </div>
+        <div class="social-links">
+            <a href="https://wa.me/5511971640775"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/astrophonia"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:contato@astrophonia.com"><i class="far fa-envelope"></i></a>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <img src="ap-logo-transparent.png" class="main-logo" alt="Astrophonia Logo">
-            <h1>ASTROPHONIA</h1>
-            
-            <div class="lang-node active-lang en">
-                <p>Discover your inner cosmos through frequency and sound. AstroPhonia offers a unique encounter between soul and consciousness through sonic alignment and vibration therapy.</p>
-            </div>
-            <div class="lang-node pt">
-                <p>Descubra seu cosmos interior através da frequência e do som. AstroPhonia oferece um encontro único entre alma e consciência através do alinhamento sônico e terapia vibracional.</p>
-            </div>
-            <div class="lang-node it">
-                <p>Scopri il tuo cosmo interiore attraverso la frequenza e il suono. AstroPhonia offre un incontro unico tra anima e coscienza através do alinhamento sônico e terapia vibracional.</p>
-            </div>
+    <section class="hero">
+        <img src="ap-logo-transparent.png" alt="AstroPhonia Logo">
+        <h1 class="lang-node active en">ASTROPHONIA</h1>
+        <h1 class="lang-node pt">ASTROPHONIA</h1>
+        <h1 class="lang-node it">ASTROPHONIA</h1>
+        <p class="lang-node active en">Sonic alignment for the deep soul.</p>
+        <p class="lang-node pt">Alinhamento sônico para a alma profunda.</p>
+        <p class="lang-node it">Allineamento sonoro per l'anima profonda.</p>
+    </section>
 
-            <div class="jump-nav">
-                <a href="#therapy" class="btn-outline lang-node active-lang en">Healing Audios</a>
-                <a href="#therapy" class="btn-outline lang-node pt">Áudios de Cura</a>
-                <a href="#therapy" class="btn-outline lang-node it">Audio di Guarigione</a>
+    <section class="products-section" id="audios">
+        <h2 class="lang-node active en">Healing Journeys</h2>
+        <h2 class="lang-node pt">Jornadas de Cura</h2>
+        <h2 class="lang-node it">Percorsi di Guarigione</h2>
 
-                <a href="mailto:contato@astrophonia.com" class="btn-outline lang-node active-lang en">Contact</a>
-                <a href="mailto:contato@astrophonia.com" class="btn-outline lang-node pt">Contato</a>
-                <a href="mailto:contato@astrophonia.com" class="btn-outline lang-node it">Contatto</a>
-            </div>
-        </section>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200/111/C5A069?text=432Hz" class="card-img" alt="Audio 1">
+                <div class="lang-node active en"><h3>The Awakening</h3></div>
+                <div class="lang-node pt"><h3>O Despertar</h3></div>
+                <div class="lang-node it"><h3>Il Risveglio</h3></div>
+                <div class="freq">432 HZ • EARTH RESONANCE</div>
+                
+                <p class="lang-node active en">Reconnect with your roots. A journey born from the silence after the storm.</p>
+                <p class="lang-node pt">Reconecte-se com suas raízes. Uma jornada nascida do silêncio após a tempestade.</p>
+                <p class="lang-node it">Riconnettiti con le tue radici. Un viaggio nato dal silenzio dopo la tempesta.</p>
 
-        <section id="therapy">
-            <h2 class="section-title">Sonic Soul Therapy</h2>
-            <div class="lang-node active-lang en content-text">
-                Heal your emotions through the power of resonance. AstroPhonia offers exclusive Sonic Journeys tuned to sacred frequencies like 432Hz and 528Hz, designed to transform pain into peace and uncertainty into strength.
-            </div>
-            <div class="lang-node pt content-text">
-                Cure suas emoções através do poder da ressonância. AstroPhonia oferece Jornadas Sônicas exclusivas sintonizadas em frequências sagradas como 432Hz e 528Hz, projetadas para transformar dor em paz e incerteza em força.
-            </div>
-            <div class="lang-node it content-text">
-                Guarisci le tu emozioni através do poder da ressonância. AstroPhonia oferece Jornadas Sônicas exclusivas sintonizadas em frequências sagradas como 432Hz e 528Hz.
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2 class="section-title">The Experience</h2>
-            <div class="lang-node active-lang en content-text">
-                Through the Sonic Mirror method, I use sacred frequencies as a map for reconstruction. I translate my own scars into harmonic resonance so you can find your own path to healing.
-            </div>
-            <div class="lang-node pt content-text">
-                Através do método Espelho Sônico, uso frequências sagradas como mapa para reconstrução. Traduzo minhas próprias cicatrizes em ressonância harmônica para que você encontre seu próprio caminho de cura.
-            </div>
-            <div class="lang-node it content-text">
-                Attraverso il metodo Sonic Mirror, uso frequenze sacre como mapa para reconstrução. Traduzo minhas próprias cicatrizes em ressonância harmônica.
-            </div>
-        </section>
-
-        <section id="audios">
-            <h2 class="section-title">Healing Audios</h2>
-            <p class="lang-node active-lang en">The Audio Library: Choose the frequency for your moment.</p>
-            <p class="lang-node pt">A Biblioteca de Áudio: Escolha a frequência para o seu momento.</p>
-
-            <div class="audio-grid">
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-dove"></i></div>
-                    <div class="lang-node active-lang en"><h3>Beyond the Silence</h3></div>
-                    <div class="lang-node pt"><h3>Além do Silêncio</h3></div>
-                    <div class="freq-tag">528Hz - Loss & Grief</div>
-                    <div class="lang-node active-lang en">
-                        <p>"I lost my partner to Covid at 38... This frequency was the bridge I built to cross from grief to peace."</p>
+                <div class="audio-preview">
+                    <i class="fas fa-play-circle play-btn"></i>
+                    <div class="waves">
+                        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
                     </div>
-                    <div class="lang-node pt">
-                        <p>"Perdi meu parceiro para a Covid aos 38... Esta frequência foi a ponte que construí para atravessar do luto à paz."</p>
-                    </div>
-                    <a href="SEU_LINK_BANDCAMP" class="btn-buy">Get Journey</a>
+                    <span style="font-size: 10px; color: var(--accent-gold)">PREVIEW</span>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-compass"></i></div>
-                    <div class="lang-node active-lang en"><h3>The Uncharted Self</h3></div>
-                    <div class="lang-node pt"><h3>O Eu Inexplorado</h3></div>
-                    <div class="freq-tag">432Hz - Starting Over</div>
-                    <div class="lang-node active-lang en">
-                        <p>"I uprooted my soul to bloom under new suns... A sanctuary to help you find home within yourself."</p>
-                    </div>
-                    <div class="lang-node pt">
-                        <p>"Arranquei minha alma para florescer sob novos sóis... Um santuário para ajudar você a encontrar o lar dentro de si."</p>
-                    </div>
-                    <a href="SEU_LINK_BANDCAMP" class="btn-buy">Get Journey</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-star"></i></div>
-                    <h3>Divine Connection</h3>
-                    <div class="freq-tag">963Hz - Pineal Activation</div>
-                    <p>Produção em andamento... Sintonize-se com a frequência dos Deuses e a Unidade Universal.</p>
-                    <a href="#" class="btn-buy">Coming Soon</a>
-                </div>
+                <a href="#" class="btn-buy">Get Journey</a>
             </div>
-        </section>
-    </main>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200/111/C5A069?text=528Hz" class="card-img" alt="Audio 2">
+                <div class="lang-node active en"><h3>Open Heart</h3></div>
+                <div class="lang-node pt"><h3>Coração Aberto</h3></div>
+                <div class="lang-node it"><h3>Cuore Aperto</h3></div>
+                <div class="freq">528 HZ • LOVE & REPAIR</div>
+                
+                <p class="lang-node active en">The frequency of miracles. Transform profound loss into the courage to start over.</p>
+                <p class="lang-node pt">A frequência dos milagres. Transforme a perda profunda em coragem para recomeçar.</p>
+                <p class="lang-node it">La frequenza dei miracoli. Trasforma la perdita profonda in coraggio per ricominciare.</p>
+
+                <div class="audio-preview">
+                    <i class="fas fa-play-circle play-btn"></i>
+                    <div class="waves">
+                        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    </div>
+                    <span style="font-size: 10px; color: var(--accent-gold)">PREVIEW</span>
+                </div>
+                <a href="#" class="btn-buy">Get Journey</a>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-line"></div>
-        <div class="footer-legal">
-            <a href="privacy.html">Privacy Policy</a> | <a href="cookies.html">Cookie Policy</a>
+        <p>© 2026 ASTROPHONIA | Developed by <strong>LiVRe Web Studium</strong> <i class="fab fa-github"></i></p>
+        <div style="margin-top: 10px;">
+            <a href="#" style="color:#444; text-decoration:none;">Privacy Policy</a> | 
+            <a href="#" style="color:#444; text-decoration:none;">Cookie Policy</a>
         </div>
-        <div class="footer-credit">
-            <a href="https://github.com/livrewestudium" target="_blank" style="color:var(--accent-gold)"><i class="fab fa-github"></i></a>
-            <span>Developed by <strong>LiVRe Web Studium</strong></span>
-        </div>
-        <p style="margin-top:20px; opacity: 0.4;">© 2026 ASTROPHONIA. All rights reserved.</p>
     </footer>
 
     <script>
-        function changeLang(lang) {
-            // Esconde todos
-            document.querySelectorAll('.lang-node').forEach(el => el.classList.remove('active-lang'));
-            document.querySelectorAll('.lang-switcher button').forEach(el => el.classList.remove('active'));
+        // Função para aceitar o Gate de Privacidade
+        function acceptGate() {
+            document.getElementById('privacy-gate').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('privacy-gate').style.display = 'none';
+            }, 500);
+        }
+
+        // Troca de Idioma
+        function setLang(lang) {
+            document.querySelectorAll('.lang-node').forEach(n => n.classList.remove('active'));
+            document.querySelectorAll('.' + lang).forEach(n => n.classList.add('active'));
             
-            // Mostra os selecionados
-            document.querySelectorAll('.' + lang).forEach(el => el.classList.add('active-lang'));
-            document.getElementById('btn-' + lang).classList.add('active');
+            document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+            document.getElementById('b-' + lang).classList.add('active');
         }
     </script>
 </body>

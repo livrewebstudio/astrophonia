@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstroPhonia | Sonic Soul Therapy</title>
+  <meta name="description" content="Discover your inner cosmos through frequency and sound. AstroPhonia offers healing audio journeys tuned to sacred frequencies like 432Hz, 528Hz and 963Hz." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── STARFIELD ── -->
+<canvas id="starfield"></canvas>
+<div class="bg-gradient"></div>
+
+<!-- ══════════════════════════════════════════
+     SPLASH SCREEN
+═══════════════════════════════════════════ -->
+<div id="splash">
+  <img src="images/logo-transparent.png" alt="AstroPhonia" class="splash-logo" />
+  <h1 class="splash-title">AstroPhonia</h1>
+  <p class="splash-subtitle" id="splash-sub">
+    Discover your inner cosmos through frequency and sound.
+  </p>
+  <p class="splash-lang-label" id="splash-lang-label">Choose your language</p>
+  <div class="splash-langs">
+    <button class="lang-btn" onclick="setLang('en')">
+      <span class="lang-flag">🇬🇧</span> EN
+    </button>
+    <button class="lang-btn" onclick="setLang('it')">
+      <span class="lang-flag">🇮🇹</span> IT
+    </button>
+    <button class="lang-btn" onclick="setLang('pt')">
+      <span class="lang-flag">🇧🇷</span> PT
+    </button>
+  </div>
+  <div class="splash-divider"></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SITE WRAPPER
+═══════════════════════════════════════════ -->
+<div id="site-wrapper" style="display:none">
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <img src="images/logo-transparent.png" alt="AstroPhonia Logo" />
+      <span class="nav-logo-text">AstroPhonia</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#therapy" data-i18n="nav_therapy">Sonic Therapy</a></li>
+      <li><a href="#audios" data-i18n="nav_audios">Healing Audios</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <!-- Social icons -->
+      <div class="nav-socials">
+        <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="nav-social-icon" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="nav-social-icon" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:contato@astrophonia.com" class="nav-social-icon" title="Email">
+          <i class="far fa-envelope"></i>
+        </a>
+      </div>
+
+      <!-- Language switcher -->
+      <div class="nav-lang">
+        <button class="nav-lang-btn" id="lang-toggle-btn" onclick="toggleLangDropdown()">
+          <span id="current-flag">🇬🇧</span>
+          <span id="current-lang-label">EN</span>
+          <i class="fas fa-chevron-down" style="font-size:0.5rem; margin-left:2px;"></i>
+        </button>
+        <div class="nav-lang-dropdown" id="lang-dropdown">
+          <button onclick="setLang('en')">🇬🇧 &nbsp; EN</button>
+          <button onclick="setLang('it')">🇮🇹 &nbsp; IT</button>
+          <button onclick="setLang('pt')">🇧🇷 &nbsp; PT</button>
+        </div>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="nav-mobile" id="mobile-nav">
+    <a href="#therapy" data-i18n="nav_therapy" onclick="closeMobileNav()">Sonic Therapy</a>
+    <a href="#audios" data-i18n="nav_audios" onclick="closeMobileNav()">Healing Audios</a>
+    <a href="#contact" data-i18n="nav_contact" onclick="closeMobileNav()">Contact</a>
+    <div class="nav-mobile-socials">
+      <a href="https://instagram.com/astrophonia" target="_blank" class="nav-social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5511971640775" target="_blank" class="nav-social-icon"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:contato@astrophonia.com" class="nav-social-icon"><i class="far fa-envelope"></i></a>
+    </div>
+    <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
+      <button class="lang-btn" style="padding:0.4rem 0.8rem;font-size:0.6rem;" onclick="setLang('en');closeMobileNav()">🇬🇧 EN</button>
+      <button class="lang-btn" style="padding:0.4rem 0.8rem;font-size:0.6rem;" onclick="setLang('it');closeMobileNav()">🇮🇹 IT</button>
+      <button class="lang-btn" style="padding:0.4rem 0.8rem;font-size:0.6rem;" onclick="setLang('pt');closeMobileNav()">🇧🇷 PT</button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero">
+    <img src="images/logo-transparent.png" alt="AstroPhonia" class="hero-logo reveal" />
+    <h1 class="hero-brand reveal reveal-delay-1">AstroPhonia</h1>
+    <p class="hero-tagline reveal reveal-delay-2" data-i18n="hero_tagline">
+      Discover your inner cosmos through frequency and sound.
+      AstroPhonia offers a unique encounter between soul and consciousness
+      through sonic alignment and vibration therapy.
+    </p>
+    <div class="hero-scroll reveal reveal-delay-3">
+      <span data-i18n="hero_scroll">Explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       THERAPY
+  ═══════════════════════════════════════════ -->
+  <section id="therapy">
+    <div class="section-divider reveal"></div>
+    <div class="therapy-inner">
+      <p class="section-eyebrow reveal" data-i18n="therapy_eyebrow">The Method</p>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="therapy_title">Sonic Soul Therapy</h2>
+      <div class="gold-line reveal reveal-delay-1"></div>
+      <p class="section-text reveal reveal-delay-2" data-i18n="therapy_text">
+        Heal your emotions through the power of resonance. AstroPhonia offers exclusive Sonic Journeys tuned to sacred frequencies like 432Hz and 528Hz, designed to transform pain into peace and uncertainty into strength. Each track is a path to recovery, born from my own real-life transitions—from profound loss to the courage of starting over.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       EXPERIENCE
+  ═══════════════════════════════════════════ -->
+  <section id="experience">
+    <div class="experience-inner reveal">
+      <img src="images/logo-transparent.png" alt="AstroPhonia" class="experience-logo-mini" />
+      <p class="experience-label" data-i18n="experience_label">AstroPhonia</p>
+      <p class="section-eyebrow" data-i18n="experience_eyebrow">How It Works</p>
+      <h2 class="section-title" data-i18n="experience_title">The Experience</h2>
+      <div class="gold-line"></div>
+      <p class="section-text" data-i18n="experience_text">
+        Through the Sonic Mirror method, I use sacred frequencies like 432Hz and 528Hz as a map for reconstruction. I translate my own scars into harmonic resonance so you can find your own path to healing. It is an encounter where my music meets your silence to awaken the harmony that already dwells within you. AstroPhonia is the bridge between your daily mind and your deepest soul.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       HEALING AUDIOS
+  ═══════════════════════════════════════════ -->
+  <section id="audios">
+    <div class="audios-inner">
+      <div class="audios-header">
+        <p class="section-eyebrow reveal" data-i18n="audios_eyebrow">Listen & Heal</p>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="audios_title">Healing Audios</h2>
+        <div class="gold-line reveal reveal-delay-1"></div>
+        <h3 style="font-family:var(--font-heading);font-size:1.3rem;color:var(--text);font-weight:300;margin-bottom:1rem;" class="reveal reveal-delay-2" data-i18n="audios_library_title">The Audio Library</h3>
+        <p class="audios-description reveal reveal-delay-2" data-i18n="audios_description">
+          Choose the frequency for your moment. Each audio below is a Sonic Journey crafted to resonate with a specific life transition. Listen to the story behind the sound, feel the frequency, and begin your own process of restoration.
+        </p>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="cards-grid">
+
+        <!-- Card 1: Beyond the Silence -->
+        <div class="audio-card reveal">
+          <div class="card-icon-wrap">
+            <img src="images/logo-transparent.png" alt="Beyond the Silence" />
+          </div>
+          <span class="card-freq-badge">528Hz · <span data-i18n="card1_freq_label">Loss &amp; Grief</span></span>
+          <h3 class="card-title" data-i18n="card1_title">Beyond the Silence</h3>
+          <p class="card-subtitle" data-i18n="card1_subtitle">528Hz · Loss &amp; Grief</p>
+          <p class="card-text" data-i18n="card1_text">
+            I lost my partner to Covid at 38, facing a journey of total solitude and silence. I had to rebuild my own floor when the world collapsed, and I did. This frequency was the bridge I built to cross from grief to peace. If I found my way back from the void alone, this sound will help you find yours too.
+          </p>
+          <div class="card-actions">
+            <a href="https://astrophonia.bandcamp.com" target="_blank" rel="noopener" class="btn-preview" onclick="openModal(event,'Beyond the Silence','528Hz · Loss &amp; Grief','preview')">
+              <i class="fas fa-play" style="font-size:0.6rem;"></i>
+              <span data-i18n="btn_preview">Audio Preview</span>
+            </a>
+            <a href="https://astrophonia.bandcamp.com" target="_blank" rel="noopener" class="btn-journey" onclick="openModal(event,'Beyond the Silence','528Hz · Loss &amp; Grief','buy')">
+              <i class="fas fa-shopping-bag" style="font-size:0.6rem;"></i>
+              <span data-i18n="btn_journey">Get Journey</span>
+            </a>
+          </div>
+          <p class="card-external-note" data-i18n="card_external_note">Opens in Bandcamp · Secure · No data stored here</p>
+        </div>
+
+        <!-- Card 2: The Uncharted Self -->
+        <div class="audio-card reveal reveal-delay-1">
+          <div class="card-icon-wrap">
+            <img src="images/logo-transparent.png" alt="The Uncharted Self" />
+          </div>
+          <span class="card-freq-badge">432Hz · <span data-i18n="card2_freq_label">Starting Over</span></span>
+          <h3 class="card-title" data-i18n="card2_title">The Uncharted Self</h3>
+          <p class="card-subtitle" data-i18n="card2_subtitle">432Hz · Starting Over</p>
+          <p class="card-text" data-i18n="card2_text">
+            I uprooted my soul to bloom under new suns, carrying the echoes of the soil I left behind. This sound was born between two worlds—where the ache of absence meets the courage of arrival. A sanctuary to help you harmonize your history and find home within yourself, beyond any border.
+          </p>
+          <div class="card-actions">
+            <a href="https://astrophonia.bandcamp.com" target="_blank" rel="noopener" class="btn-preview" onclick="openModal(event,'The Uncharted Self','432Hz · Starting Over','preview')">
+              <i class="fas fa-play" style="font-size:0.6rem;"></i>
+              <span data-i18n="btn_preview">Audio Preview</span>
+            </a>
+            <a href="https://astrophonia.bandcamp.com" target="_blank" rel="noopener" class="btn-journey" onclick="openModal(event,'The Uncharted Self','432Hz · Starting Over','buy')">
+              <i class="fas fa-shopping-bag" style="font-size:0.6rem;"></i>
+              <span data-i18n="btn_journey">Get Journey</span>
+            </a>
+          </div>
+          <p class="card-external-note" data-i18n="card_external_note">Opens in Bandcamp · Secure · No data stored here</p>
+        </div>
+
+        <!-- Card 3: COMING SOON — 963Hz -->
+        <div class="audio-card coming-soon reveal reveal-delay-2">
+          <div class="card-icon-wrap">
+            <img src="images/logo-transparent.png" alt="Coming Soon" style="opacity:0.5;" />
+          </div>
+          <span class="card-freq-badge">963Hz · <span data-i18n="card3_freq_label">Awakening</span></span>
+          <h3 class="card-title" data-i18n="card3_title">The Awakened Gate</h3>
+          <p class="card-subtitle" data-i18n="card3_subtitle">963Hz · Pineal Awakening</p>
+          <p class="card-text" data-i18n="card3_text">
+            The frequency of the Gods — 963Hz activates the pineal gland, opening the gateway between the physical and the divine. A sonic journey toward your highest consciousness and purest intuition.
+          </p>
+          <div class="card-actions">
+            <button class="btn-coming" data-i18n="btn_coming">Coming Soon</button>
+          </div>
+        </div>
+
+        <!-- Card 4: COMING SOON — 741Hz -->
+        <div class="audio-card coming-soon reveal reveal-delay-3">
+          <div class="card-icon-wrap">
+            <img src="images/logo-transparent.png" alt="Coming Soon" style="opacity:0.5;" />
+          </div>
+          <span class="card-freq-badge">741Hz · <span data-i18n="card4_freq_label">Detox & Truth</span></span>
+          <h3 class="card-title" data-i18n="card4_title">Voice of the Void</h3>
+          <p class="card-subtitle" data-i18n="card4_subtitle">741Hz · Detox &amp; Truth</p>
+          <p class="card-text" data-i18n="card4_text">
+            741Hz dissolves the toxins held in body and mind — emotional, energetic and cellular. A journey for those ready to release what no longer serves and speak their deepest truth without fear.
+          </p>
+          <div class="card-actions">
+            <button class="btn-coming" data-i18n="btn_coming">Coming Soon</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Frequency suggestion block -->
+      <div class="freq-suggestion reveal" style="margin-top:3rem;">
+        <h3 data-i18n="freq_suggestion_title">Sacred Frequencies in This Collection</h3>
+        <div class="freq-tags">
+          <span class="freq-tag">432Hz — Natural Harmony</span>
+          <span class="freq-tag">528Hz — DNA Repair &amp; Love</span>
+          <span class="freq-tag">639Hz — Relationships &amp; Connection</span>
+          <span class="freq-tag">741Hz — Detox &amp; Truth</span>
+          <span class="freq-tag">852Hz — Spiritual Clarity</span>
+          <span class="freq-tag">963Hz — Pineal Awakening</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="section-divider reveal"></div>
+    <div class="contact-inner">
+      <p class="section-eyebrow reveal" data-i18n="contact_eyebrow">Reach Out</p>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="contact_title">Contact</h2>
+      <div class="gold-line reveal reveal-delay-1"></div>
+      <p class="audios-description reveal reveal-delay-2" data-i18n="contact_text">
+        Feel free to reach out. Whether you have questions about a frequency or simply want to share your experience, I am here.
+      </p>
+      <div class="contact-links reveal reveal-delay-2">
+        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="contact-link">
+          <i class="fab fa-whatsapp"></i>
+          <span>+55 11 97164-0775</span>
+        </a>
+        <a href="mailto:contato@astrophonia.com" class="contact-link">
+          <i class="far fa-envelope"></i>
+          <span>contato@astrophonia.com</span>
+        </a>
+        <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="contact-link">
+          <i class="fab fa-instagram"></i>
+          <span>@astrophonia</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo-transparent.png" alt="AstroPhonia" />
+        <span class="footer-brand-text">AstroPhonia</span>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html" class="footer-link" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="cookies.html" class="footer-link" data-i18n="footer_cookies">Cookie Policy</a>
+        <a href="#contact" class="footer-link" data-i18n="nav_contact">Contact</a>
+        <span class="footer-link" style="cursor:default; margin-top:0.5rem;">© 2025 AstroPhonia</span>
+      </div>
+      <div class="footer-credit">
+        <p class="footer-credit-text">
+          <span data-i18n="footer_dev">Website developed by</span><br />
+          <a href="https://github.com/livrewebstudio/astrophonia" target="_blank" rel="noopener">
+            LiVRe Web Studium
+          </a>
+        </p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:contato@astrophonia.com" class="footer-social"><i class="far fa-envelope"></i></a>
+          <a href="https://astrophonia.bandcamp.com" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-bandcamp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /site-wrapper -->
+
+<!-- ══════════════════════════════════════════
+     REDIRECT MODAL (Bandcamp)
+═══════════════════════════════════════════ -->
+<div id="redirect-modal">
+  <div class="modal-box">
+    <div class="modal-icon">🎵</div>
+    <h3 class="modal-title" id="modal-track-name">Beyond the Silence</h3>
+    <p class="modal-subtitle" id="modal-track-sub">528Hz · Loss &amp; Grief</p>
+    <p class="modal-text" id="modal-text" data-i18n="modal_text">
+      You are about to visit Bandcamp, our secure music platform. Your purchase is processed there — no personal data is stored on this website.
+    </p>
+    <div class="modal-actions">
+      <a href="#" id="modal-continue-btn" target="_blank" rel="noopener" class="modal-continue" data-i18n="modal_continue">Continue to Bandcamp →</a>
+      <button class="modal-cancel" onclick="closeModal()" data-i18n="modal_cancel">Go back</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     COOKIE BANNER
+═══════════════════════════════════════════ -->
+<div id="cookie-banner">
+  <p class="cookie-text" id="cookie-text" data-i18n="cookie_text">
+    This site uses essential cookies to ensure proper functionality. No personal data is collected or stored. By continuing, you agree to our <a href="cookies.html" data-i18n="footer_cookies">Cookie Policy</a>.
+  </p>
+  <div class="cookie-actions">
+    <a href="cookies.html" class="btn-cookie-more" data-i18n="cookie_more">Learn more</a>
+    <button class="btn-cookie-accept" onclick="acceptCookies()" data-i18n="cookie_accept">Accept</button>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

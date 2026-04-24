@@ -58,7 +58,10 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 .bg-gradient {
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 20% 20%, #2C1E3D 0%, #121E3D 30%, #050813 70%);
+  background:
+    radial-gradient(ellipse at 60% 0%, #1a2f5e 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 80%, #0d1e3a 0%, transparent 50%),
+    linear-gradient(180deg, #060c1e 0%, #0a1528 40%, #050813 100%);
   z-index: 0;
 }
 
@@ -79,7 +82,10 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 30% 30%, #2C1E3D 0%, #121E3D 40%, #050813 100%);
+  background:
+    radial-gradient(ellipse at 60% 0%, #1a2f5e 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 80%, #0d1e3a 0%, transparent 50%),
+    linear-gradient(180deg, #060c1e 0%, #0a1528 40%, #050813 100%);
   transition: opacity 0.8s var(--ease), visibility 0.8s;
 }
 #splash.hidden {
@@ -98,10 +104,10 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   50% { transform: translateY(-12px); }
 }
 .splash-title {
-  font-family: var(--font-display);
+  font-family: 'Cinzel', serif;
   font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 400;
-  letter-spacing: 0.25em;
+  font-weight: 500;
+  letter-spacing: 0.28em;
   background: linear-gradient(135deg, #9A7A4A, #C5A069, #D4B483, #C5A069, #9A7A4A);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -117,10 +123,10 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 }
 .splash-subtitle {
   font-family: var(--font-heading);
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
-  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
   font-style: italic;
-  color: var(--text-dim);
+  color: #c0c8dc;
   text-align: center;
   max-width: 520px;
   padding: 0 2rem;
@@ -215,8 +221,9 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   filter: drop-shadow(0 0 8px rgba(197,160,105,0.4));
 }
 .nav-logo-text {
-  font-family: var(--font-display);
-  font-size: 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
   letter-spacing: 0.18em;
   color: var(--gold);
 }
@@ -228,10 +235,10 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 }
 .nav-links a {
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: #c8cfe0;
   transition: color 0.3s;
   position: relative;
 }
@@ -254,11 +261,11 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
+  padding: 0.45rem 0.9rem;
   border: 1px solid var(--gold-border);
   color: var(--gold);
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   letter-spacing: 0.18em;
   background: transparent;
   cursor: pointer;
@@ -285,11 +292,11 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.7rem 1rem;
+  padding: 0.75rem 1rem;
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.15em;
-  color: var(--text-dim);
+  color: #c8cfe0;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -414,20 +421,20 @@ section {
   margin-bottom: 1.5rem;
 }
 .hero-brand {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight: 500;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.32em;
   color: var(--gold);
   margin-bottom: 1.5rem;
-  text-shadow: 0 0 40px rgba(197,160,105,0.3);
+  text-shadow: 0 0 40px rgba(197,160,105,0.35), 0 2px 60px rgba(197,160,105,0.15);
 }
 .hero-tagline {
   font-family: var(--font-heading);
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: 300;
-  color: var(--text-dim);
-  max-width: 540px;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  color: #c8cfe0;
+  max-width: 560px;
   line-height: 1.9;
   text-align: center;
 }
@@ -440,9 +447,9 @@ section {
 }
 .hero-scroll span {
   font-family: var(--font-display);
-  font-size: 0.55rem;
+  font-size: 0.7rem;
   letter-spacing: 0.3em;
-  color: var(--text-muted);
+  color: var(--gold-dark);
   text-transform: uppercase;
 }
 .scroll-arrow {
@@ -471,11 +478,12 @@ section {
 }
 .section-eyebrow {
   font-family: var(--font-display);
-  font-size: 0.6rem;
-  letter-spacing: 0.35em;
-  color: var(--gold-dark);
+  font-size: 0.82rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 1rem;
+  opacity: 0.85;
 }
 .section-title {
   font-family: var(--font-display);
@@ -488,9 +496,9 @@ section {
 }
 .section-text {
   font-family: var(--font-heading);
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
-  font-weight: 300;
-  color: var(--text);
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  font-weight: 400;
+  color: #d8dae8;
   line-height: 2;
   text-align: justify;
 }
@@ -517,9 +525,9 @@ section {
 }
 .experience-label {
   font-family: var(--font-display);
-  font-size: 0.55rem;
+  font-size: 0.7rem;
   letter-spacing: 0.35em;
-  color: var(--text-muted);
+  color: var(--gold-dark);
   margin-bottom: 2rem;
 }
 
@@ -563,13 +571,13 @@ section {
 }
 .audios-description {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  color: var(--text-dim);
+  font-size: 1.12rem;
+  color: #c8cfe0;
   text-align: center;
   max-width: 620px;
   margin: 0 auto 3rem;
   line-height: 1.9;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Audio Cards Grid */
@@ -637,17 +645,17 @@ section {
 }
 .card-subtitle {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-style: italic;
   color: var(--gold);
   margin-bottom: 1.2rem;
 }
 .card-text {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 300;
-  color: var(--text-dim);
-  line-height: 1.8;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #c0c4d8;
+  line-height: 1.85;
   margin-bottom: 1.8rem;
 }
 .card-actions {
@@ -660,11 +668,11 @@ section {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   border: 1px solid var(--gold-border);
   color: var(--gold);
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   background: transparent;
   cursor: pointer;
@@ -680,11 +688,11 @@ section {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
   color: var(--bg-deep);
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   font-weight: 600;
   cursor: pointer;
@@ -707,10 +715,11 @@ section {
 }
 .card-external-note {
   font-family: var(--font-body);
-  font-size: 0.65rem;
-  color: var(--text-muted);
+  font-size: 0.72rem;
+  color: var(--gold-dark);
   margin-top: 0.5rem;
   letter-spacing: 0.05em;
+  opacity: 0.8;
 }
 
 /* Frequency suggestion section */
@@ -854,9 +863,9 @@ section {
   gap: 1rem;
   padding: 1rem 2rem;
   border: 1px solid var(--gold-border);
-  color: var(--text);
+  color: #d8dae8;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   letter-spacing: 0.15em;
   width: 100%;
   max-width: 360px;
@@ -916,9 +925,9 @@ section {
 }
 .footer-link {
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.15em;
-  color: var(--text-muted);
+  color: #8090a8;
   transition: color 0.3s;
   text-decoration: none;
 }
@@ -931,10 +940,10 @@ section {
 }
 .footer-credit-text {
   font-family: var(--font-body);
-  font-size: 0.65rem;
-  color: var(--text-muted);
+  font-size: 0.78rem;
+  color: #9098b0;
   text-align: right;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .footer-credit-text a {
   color: var(--gold-dark);
@@ -984,8 +993,8 @@ section {
 #cookie-banner.hidden { transform: translateY(110%); }
 .cookie-text {
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  color: var(--text-dim);
+  font-size: 0.85rem;
+  color: #c0c8dc;
   line-height: 1.6;
   flex: 1;
   min-width: 200px;

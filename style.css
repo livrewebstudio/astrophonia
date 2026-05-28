@@ -417,7 +417,7 @@ section {
   padding: calc(var(--nav-h) + 2rem) 2rem 4rem;
 }
 .hero-logo {
-  width: clamp(120px, 20vw, 200px);
+  width: clamp(160px, 24vw, 240px);
   filter: drop-shadow(0 0 30px rgba(197,160,105,0.4));
   animation: floatLogo 8s ease-in-out infinite;
   margin-bottom: 1.5rem;

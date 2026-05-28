@@ -96,7 +96,7 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   pointer-events: none;
 }
 .splash-logo {
-  width: 200px;
+  width: 300px;
   filter: drop-shadow(0 0 24px rgba(197,160,105,0.5));
   animation: floatLogo 6s ease-in-out infinite;
   margin-bottom: 1.5rem;
@@ -417,7 +417,7 @@ section {
   padding: calc(var(--nav-h) + 2rem) 2rem 4rem;
 }
 .hero-logo {
-  width: clamp(180px, 26vw, 260px);
+  width: clamp(200px, 30vw, 300px);
   filter: drop-shadow(0 0 30px rgba(197,160,105,0.4));
   animation: floatLogo 8s ease-in-out infinite;
   margin-bottom: 1.5rem;

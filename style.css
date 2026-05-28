@@ -593,7 +593,7 @@ section {
   border: 1px solid var(--gold-border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 2.5rem 2rem;
+  padding: 2rem 2.2rem;
   text-align: center;
   transition: all 0.4s var(--ease);
   position: relative;
@@ -619,12 +619,12 @@ section {
   cursor: not-allowed;
 }
 .card-icon-wrap {
-  width: 80px; height: 80px;
-  margin: 0 auto 1.5rem;
+  width: 56px; height: 56px;
+  margin: 0 auto 1rem;
   display: flex; align-items: center; justify-content: center;
 }
 .card-icon-wrap img {
-  width: 70px;
+  width: 50px;
   filter: drop-shadow(0 0 12px rgba(197,160,105,0.5));
 }
 .card-freq-badge {
@@ -650,15 +650,15 @@ section {
   font-size: 1rem;
   font-style: italic;
   color: var(--gold);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.9rem;
 }
 .card-text {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.97rem;
   font-weight: 400;
   color: #c0c4d8;
-  line-height: 1.85;
-  margin-bottom: 1.8rem;
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
 }
 .card-actions {
   display: flex;

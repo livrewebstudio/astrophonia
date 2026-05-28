@@ -34,13 +34,13 @@ const translations = {
     audios_eyebrow: "Listen & Explore",
     audios_title: "Sonic Journeys",
     audios_library_title: "The Journey Collection",
-    audios_description: "Each piece below is a Sonic Mirror Journey — original music composed at 432Hz, shaped by a specific human experience. Choose the one that resonates with where you are. Listen to the story behind the sound, feel the frequency, and let the music accompany your own moment.",
+    audios_description: "Each piece here is original music composed at 432Hz, shaped by a specific lived experience. Choose the one that resonates with your own story. Feel the frequency and let the music accompany your moment.",
 
     // Cards
     card1_freq_label: "Loss & Grief",
     card1_title: "Beyond the Silence",
     card1_subtitle: "432Hz · Loss & Grief",
-    card1_text: "I lost my partner during Covid, at 38, in total solitude — unable to grieve alongside anyone. I had to find my own floor when everything collapsed. This composition was born in that silence. It carries the weight of what was lost and the quiet of what came after. A sonic companion for those navigating their own grief, at their own pace.",
+    card1_text: "I lost my partner during Covid — I was living alone, with no one to grieve alongside. I had to find solid ground when everything collapsed. This composition was born in that silence. It carries the weight of what was lost and the stillness of what came after. A sonic companion for those who walk through their own grief, at their own pace.",
 
     card2_freq_label: "Starting Over",
     card2_title: "The Uncharted Self",
@@ -114,13 +114,15 @@ const translations = {
     audios_eyebrow: "Ascolta ed Esplora",
     audios_title: "Viaggi Sonici",
     audios_library_title: "La Collezione",
-    audios_description: "Ogni pezzo qui sotto è un Sonic Mirror Journey — musica originale composta a 432Hz, plasmata da una specifica esperienza umana. Scegli quello che risuona con dove sei adesso. Ascolta la storia dietro il suono, senti la frequenza e lascia che la musica accompagni il tuo momento.",
+    audios_description: "Ogni pezzo qui è musica originale composta a 432Hz, plasmata da una vivenza specifica. Scegli quello che risuona con la tua storia. Senti la frequenza e lascia che la musica accompagni il tuo momento.",
 
     // Cards
     card1_freq_label: "Perdita e Dolore",
     card1_title: "Beyond the Silence",
     card1_subtitle: "432Hz · Perdita e Dolore",
-    card1_text: "Ho perso il mio compagno durante il Covid, a 38 anni, in totale solitudine — senza poter elaborare il lutto insieme a nessuno. Ho dovuto trovare il mio equilibrio quando tutto è crollato. Questa composizione è nata in quel silenzio. Porta il peso di ciò che è andato perduto e la quiete di ciò che è venuto dopo. Un compagno sonico per chi attraversa il proprio lutto, al proprio ritmo.",
+    card1_text: "Ho perso il mio compagno durante il Covid — vivevo sola, senza nessuno con cui condividere il dolore. Ho dovuto trovare il mio equilibrio quando tutto è crollato. Questa composizione è nata in quel silenzio. Porta il peso di ciò che è andato perduto e la quiete di ciò che è venuto dopo. Una compagnia sonora per chi attraversa il proprio lutto, al proprio ritmo.
+
+Segue pro card 2?",
 
     card2_freq_label: "Ricominciare",
     card2_title: "The Uncharted Self",
@@ -194,13 +196,13 @@ const translations = {
     audios_eyebrow: "Ouça e Explore",
     audios_title: "Jornadas Sônicas",
     audios_library_title: "A Coleção",
-    audios_description: "Cada peça abaixo é uma Sonic Mirror Journey — música original composta a 432Hz, moldada por uma experiência humana específica. Escolha a que ressoa com onde você está agora. Ouça a história por trás do som, sinta a frequência e deixe a música acompanhar o seu momento.",
+    audios_description: "Cada peça abaixo é uma música original composta a 432Hz, moldada por uma vivência específica. Escolha a que ressoa com a sua história. Sinta a frequência e deixe a música acompanhar o seu momento.",
 
     // Cards
     card1_freq_label: "Perda e Luto",
     card1_title: "Beyond the Silence",
     card1_subtitle: "432Hz · Perda e Luto",
-    card1_text: "Perdi meu companheiro durante a Covid, aos 38 anos, em total solidão — sem poder elaborar o luto junto de ninguém. Precisei encontrar meu próprio chão quando tudo desabou. Esta composição nasceu naquele silêncio. Ela carrega o peso do que foi perdido e a quietude do que veio depois. Uma companhia sônica para quem atravessa o próprio luto, no próprio ritmo.",
+    card1_text: "Perdi meu companheiro durante a Covid — morava sozinha, não pude viver esse luto junto de alguém. Precisei encontrar meu próprio chão quando tudo desabou. Esta composição nasceu naquele silêncio. Ela carrega o peso do que foi perdido e a quietude do que veio depois. Uma companhia sônica para quem atravessa o próprio luto, no próprio ritmo.",
 
     card2_freq_label: "Recomeçar",
     card2_title: "The Uncharted Self",

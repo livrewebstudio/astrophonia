@@ -16,19 +16,19 @@ const translations = {
     nav_contact: "Contact",
 
     // Hero
-    hero_tagline: "Discover your inner cosmos through frequency and sound. AstroPhonia offers original music composed at 432Hz — a sonic mirror for the moments that shape who we are.",
+    hero_tagline: "AstroPhonia — where natural frequency meets real lived experiences. Find your sonic journey: the sound mirror of your own story.",
     hero_scroll: "Explore",
 
     // Method
     therapy_eyebrow: "The Method",
     therapy_title: "Sonic Mirror Journey",
-    therapy_text: "All AstroPhonia compositions are tuned to 432Hz — a pitch standard where the A note resonates at 432 vibrations per second, in contrast to the modern concert tuning of 440Hz. Used historically by composers across centuries, 432Hz is often described as having a warmer, more grounded resonance. It is an intentional creative choice, not a claim — a way of anchoring the music in a frequency that feels closer to the natural world. Each piece is composed live on a Roland Juno-Gi and born from a real human transition: loss, solitude, displacement, beginning again.",
+    therapy_text: "All AstroPhonia music is created at 432Hz — a way of anchoring the sound in a frequency close to the natural world. 432Hz is considered a natural frequency because mathematically it mirrors the patterns of nature and the Universe. Each piece is composed by Luciana Romano and born from her real human experiences: grief, solitude, displacement, new beginnings, love, strength... Nothing was invented. Everything was lived.",
 
     // Experience
     experience_label: "AstroPhonia",
     experience_eyebrow: "How It Works",
     experience_title: "The Journey",
-    experience_text: "The Sonic Mirror is the idea that music, when composed from lived experience, can reflect something back to the listener — not as an answer, but as a companion. I translate my own transitions into sound at 432Hz so that the vibration carries the weight of what was real. You bring your own story. The music meets you there. What happens in that encounter belongs entirely to you.",
+    experience_text: "Sonic Mirror is the idea that music, when composed from lived experience, can reflect something back — not as an answer, but as a mirror. I translate my own experiences into compositions tuned to 432Hz, like opening a window onto one's own inner cosmos. On the other side of that window, you might find your own story in the form of sound. What happens in that encounter belongs entirely to you.",
 
     // Audios
     audios_eyebrow: "Listen & Explore",
@@ -96,19 +96,19 @@ const translations = {
     nav_contact: "Contatto",
 
     // Hero
-    hero_tagline: "Scopri il tuo cosmo interiore attraverso la frequenza e il suono. AstroPhonia offre musica originale composta a 432Hz — uno specchio sonoro per i momenti che ci formano.",
+    hero_tagline: "AstroPhonia — dove la frequenza naturale incontra esperienze vissute davvero. Trova il tuo viaggio sonico: lo specchio sonoro delle tue esperienze.",
     hero_scroll: "Esplora",
 
     // Method
     therapy_eyebrow: "Il Metodo",
     therapy_title: "Sonic Mirror Journey",
-    therapy_text: "Tutte le composizioni di AstroPhonia sono accordate a 432Hz — uno standard di intonazione in cui la nota La risuona a 432 vibrazioni al secondo, in contrasto con il moderno standard da concerto di 440Hz. Utilizzato storicamente dai compositori nel corso dei secoli, il 432Hz è spesso descritto come avente una risonanza più calda e radicata. È una scelta creativa intenzionale, non un'affermazione terapeutica — un modo di ancorare la musica a una frequenza che si sente più vicina al mondo naturale. Ogni pezzo è composto dal vivo su un Roland Juno-Gi e nasce da una vera transizione umana: perdita, solitudine, sradicamento, nuovo inizio.",
+    therapy_text: "Tutta la musica di AstroPhonia è creata a 432Hz — un modo di ancorare il suono in una frequenza vicina al mondo naturale. Il 432Hz è considerata frequenza naturale perché matematicamente rispecchia i modelli della natura e dell'Universo. Ogni pezzo è composto dall'artista Luciana Romano e nasce dalle sue esperienze umane reali: lutto, solitudine, sradicamento, nuovi inizi, amore, forza... Niente è stato inventato. Tutto è stato vissuto.",
 
     // Experience
     experience_label: "AstroPhonia",
     experience_eyebrow: "Come Funziona",
     experience_title: "Il Viaggio",
-    experience_text: "Il Sonic Mirror è l'idea che la musica, quando è composta da esperienze vissute, possa riflettere qualcosa all'ascoltatore — non come risposta, ma come compagno. Traduco le mie stesse transizioni in suono a 432Hz affinché la vibrazione porti il peso di ciò che è stato reale. Tu porti la tua storia. La musica ti incontra lì. Ciò che accade in quell'incontro appartiene interamente a te.",
+    experience_text: "Sonic Mirror è l'idea che la musica, quando nasce da esperienze vere, possa riflettere qualcosa — non come risposta, ma come specchio. Traduco le mie esperienze personali in composizioni accordate a 432Hz, come chi apre una finestra sul proprio cosmo interiore. Dall'altro lato di quella finestra, puoi trovare la tua storia in forma di musica. Quello che accade in quell'incontro appartiene interamente a te.",
 
     // Audios
     audios_eyebrow: "Ascolta ed Esplora",
@@ -176,19 +176,19 @@ const translations = {
     nav_contact: "Contato",
 
     // Hero
-    hero_tagline: "Descubra seu cosmos interior através da frequência e do som. A AstroPhonia oferece música original composta a 432Hz — um espelho sônico para os momentos que nos formam.",
+    hero_tagline: "Descubra seu cosmos interior através da frequência e do som. AstroPhonia — onde a frequência natural encontra vivências reais. Encontre a sua jornada sônica: o espelho sonoro de suas próprias vivências.",
     hero_scroll: "Explorar",
 
     // Method
     therapy_eyebrow: "O Método",
     therapy_title: "Sonic Mirror Journey",
-    therapy_text: "Todas as composições da AstroPhonia são afinadas a 432Hz — um padrão de afinação em que a nota Lá ressoa a 432 vibrações por segundo, em contraste com o padrão moderno de concerto de 440Hz. Utilizado historicamente por compositores ao longo dos séculos, o 432Hz é frequentemente descrito como tendo uma ressonância mais quente e centrada. É uma escolha criativa intencional, não uma afirmação terapêutica — uma forma de ancorar a música em uma frequência que parece mais próxima do mundo natural. Cada peça é composta ao vivo num Roland Juno-Gi e nasce de uma transição humana real: luto, solidão, deslocamento, recomeço.",
+    therapy_text: "Todas as músicas da AstroPhonia são criadas a 432Hz — uma forma de ancorar a música em uma frequência próxima ao mundo natural. 432Hz é uma frequência matematicamente similar aos padrões da natureza e do Universo. Cada peça é composta pela artista Luciana Romano e nasce de suas vivências humanas reais: luto, solidão, deslocamento, recomeço, amor, força... Nada foi inventado. Tudo foi vivido.",
 
     // Experience
     experience_label: "AstroPhonia",
     experience_eyebrow: "Como Funciona",
     experience_title: "A Jornada",
-    experience_text: "O Sonic Mirror é a ideia de que a música, quando composta a partir de experiências vividas, pode refletir algo de volta ao ouvinte — não como resposta, mas como companhia. Traduzo minhas próprias transições em som a 432Hz para que a vibração carregue o peso do que foi real. Você traz a sua história. A música te encontra lá. O que acontece nesse encontro pertence inteiramente a você.",
+    experience_text: "Sonic Mirror é a ideia de que a música, quando composta a partir de experiências verdadeiras, pode refletir algo — não como resposta, mas como espelho. Traduzo minhas próprias vivências em músicas compostas em 432Hz, como quem abre uma janela para o próprio cosmos interior. Do outro lado dessa janela, você pode encontrar a sua história em forma de música, e o que acontece nesse encontro pertence inteiramente a você..",
 
     // Audios
     audios_eyebrow: "Ouça e Explore",
@@ -227,10 +227,10 @@ const translations = {
     // Contact
     contact_eyebrow: "Fale Comigo",
     contact_title: "Contato",
-    contact_text: "Sinta-se à vontade para entrar em contato. Seja para tirar dúvidas sobre as jornadas, para usá-las na sua prática, ou simplesmente para compartilhar a sua experiência — estou aqui.",
+    contact_text: "Sinta-se à vontade para entrar em contato. Seja para tirar dúvidas sobre as jornadas, para usá-las na sua prática, ou simplesmente para compartilhar a sua experiência.",
 
     // Modal
-    modal_text: "Você está prestes a visitar o Bandcamp, nossa plataforma musical segura. Sua compra é processada lá — nenhum dado pessoal é armazenado neste site.",
+    modal_text: "Você está prestes a visitar o Bandcamp, nossa plataforma musical segura. Sua compra é processada com total segurança.",
     modal_continue: "Continuar para o Bandcamp →",
     modal_cancel: "Voltar",
 

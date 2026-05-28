@@ -96,7 +96,7 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
   pointer-events: none;
 }
 .splash-logo {
-  width: 160px;
+  width: 200px;
   filter: drop-shadow(0 0 24px rgba(197,160,105,0.5));
   animation: floatLogo 6s ease-in-out infinite;
   margin-bottom: 1.5rem;

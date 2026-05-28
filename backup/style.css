@@ -1,5 +1,5 @@
 /* ============================================================
-   ASTROPHONIA — Sonic Soul Therapy
+   ASTROPHONIA — Sonic Mirror Journey
    Design: LiVRe Web Studium
    Paleta: Deep Cosmic Navy + Amethyst + Noble Gold
    ============================================================ */
@@ -32,7 +32,9 @@
 
 /* ─── RESET ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 17px; }
+@media (min-width: 768px)  { html { font-size: 18px; } }
+@media (min-width: 1200px) { html { font-size: 19px; } }
 body {
   background: var(--bg-deep);
   color: var(--text);

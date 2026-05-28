@@ -188,7 +188,7 @@ const translations = {
     experience_label: "AstroPhonia",
     experience_eyebrow: "Como Funciona",
     experience_title: "A Jornada",
-    experience_text: "Sonic Mirror é a ideia de que a música, quando composta a partir de experiências verdadeiras, pode refletir algo — não como resposta, mas como espelho. Traduzo minhas próprias vivências em músicas compostas em 432Hz, como quem abre uma janela para o próprio cosmos interior. Do outro lado dessa janela, você pode encontrar a sua história em forma de música, e o que acontece nesse encontro pertence inteiramente a você..",
+    experience_text: "Sonic Mirror é a ideia de que a música, quando composta a partir de experiências verdadeiras, pode refletir algo — não como resposta, mas como espelho. Traduzo minhas próprias vivências em músicas compostas em 432Hz, como quem abre uma janela para o próprio cosmos interior. Do outro lado dessa janela, você pode encontrar a sua história em forma de música, e o que acontece nesse encontro pertence inteiramente a você.",
 
     // Audios
     audios_eyebrow: "Ouça e Explore",

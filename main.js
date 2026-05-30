@@ -118,8 +118,8 @@ function openModal(e, trackName, trackSub, type) {
   if (continueBtn) {
     continueBtn.textContent = t.modal_continue || 'Continue to Bandcamp →';
     // Replace with actual Bandcamp link when live
-    pendingHref = 'https://astrophonia.bandcamp.com';
-    continueBtn.href = pendingHref;
+pendingHref = e.currentTarget.href;
+continueBtn.href = pendingHref;
   }
 
   document.getElementById('redirect-modal').classList.add('open');

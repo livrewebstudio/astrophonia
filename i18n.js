@@ -127,10 +127,10 @@ const translations = {
     card2_subtitle: "432Hz · Ricominciare",
     card2_text: "Ho lasciato il mio paese portando solo ciò che potevo tenere dentro di me. Questa composizione è nata tra due mondi — nello spazio in cui ciò che hai lasciato risuona ancora e ciò che ti aspetta non ha ancora una mappa. Uno specchio sonico per chi è nel mezzo di un passaggio: né qui né là, ma in movimento.",
 
-    card3_freq_label: "Nuovo Capitolo",
-    card3_title: "The Open Door",
-    card3_subtitle: "432Hz · Nuovo Capitolo",
-    card3_text: "Una nuova composizione in corso — per il momento in cui qualcosa finisce e qualcosa di innominato comincia. Lo spazio di mezzo prima che un nuovo capitolo prenda forma.",
+    card3_freq_label: "Un Vero Amore",
+    card3_title: "Love Across The Ocean",
+    card3_subtitle: "432Hz · Un Vero Amore",
+    card3_text: "L'amore non chiede permesso né aspetta il momento giusto. Questa canzone è nata da un istante inaspettato — uno sconosciuto su un autobus, una conversazione casuale, un nome che quasi avevo dimenticato. L'amore mi ha trovata a 49 anni, dall'altra parte di un oceano che non avevo in programma di attraversare. Non perché stessi cercando. Perché era semplicemente destinato ad accadere. Per chi ha smesso di credere — forse è già in arrivo.",
 
     card4_freq_label: "Lasciar Andare",
     card4_title: "The Weight You Set Down",
@@ -202,15 +202,15 @@ const translations = {
     card1_subtitle: "432Hz · Perda e Luto",
     card1_text: "Perdi meu companheiro durante a Covid — morava sozinha, não pude viver esse luto junto de alguém. Precisei encontrar meu próprio chão quando tudo desabou. Esta composição nasceu naquele silêncio. Ela carrega o peso do que foi perdido e a quietude do que veio depois. Uma companhia sônica para quem atravessa o próprio luto, no próprio ritmo.",
 
-    card2_freq_label: "Recomeçar",
+    card2_freq_label: "Novos Horizontes",
     card2_title: "The Uncharted Self",
-    card2_subtitle: "432Hz · Recomeçar",
+    card2_subtitle: "432Hz · Novos Horizontes",
     card2_text: "Deixei meu país carregando apenas o que cabia dentro de mim. Esta composição nasceu entre dois mundos — no espaço em que o que você deixou ainda ecoa e o que está à frente ainda não tem mapa. Um espelho sônico para quem está no meio de uma travessia: nem aqui nem lá, mas em movimento.",
 
     card3_freq_label: "Novo Capítulo",
     card3_title: "The Open Door",
     card3_subtitle: "432Hz · Novo Capítulo",
-    card3_text: "Uma nova composição em andamento — para o momento em que algo termina e algo sem nome começa. O espaço do meio antes de um novo capítulo tomar forma.",
+    card3_text: "O amor não pede permissão nem espera o momento certo. Esta música nasceu de um instante inesperado — um estranho num ônibus, uma conversa casual, um nome que quase esqueci. O amor me encontrou aos 49 anos, do outro lado de um oceano que eu não planejava cruzar. Não porque eu estivesse procurando. Porque simplesmente estava destinado a acontecer. Para quem parou de acreditar — talvez já esteja a caminho.",
 
     card4_freq_label: "Deixar Ir",
     card4_title: "The Weight You Set Down",

@@ -207,10 +207,10 @@ const translations = {
     card2_subtitle: "432Hz · Novos Horizontes",
     card2_text: "Deixei meu país carregando apenas o que cabia dentro de mim. Esta composição nasceu entre dois mundos — no espaço em que o que você deixou ainda ecoa e o que está à frente ainda não tem mapa. Um espelho sônico para quem está no meio de uma travessia: nem aqui nem lá, mas em movimento.",
 
-    card3_freq_label: "Novo Capítulo",
-    card3_title: "The Open Door",
-    card3_subtitle: "432Hz · Novo Capítulo",
-    card3_text: "O amor não pede permissão nem espera o momento certo. Esta música nasceu de um instante inesperado — um estranho num ônibus, uma conversa casual, um nome que quase esqueci. O amor me encontrou aos 49 anos, do outro lado de um oceano que eu não planejava cruzar. Não porque eu estivesse procurando. Porque simplesmente estava destinado a acontecer. Para quem parou de acreditar — talvez já esteja a caminho.",
+    card3_freq_label: "Amor Verdadeiro",
+    card3_title: "Love Across The Ocean",
+    card3_subtitle: "432Hz · Amor Verdadeiro",
+    card3_text: "O amor não pede permissão nem espera o momento certo. Esta música nasceu de um instante inesperado — uma estranha num ônibus, uma conversa casual, um nome, um contato. O amor me encontrou aos 49 anos, do outro lado de um oceano que eu não planejava cruzar. Não porque eu estivesse procurando. Porque simplesmente estava destinado a acontecer. Para quem parou de acreditar — talvez já esteja a caminho.",
 
     card4_freq_label: "Deixar Ir",
     card4_title: "The Weight You Set Down",

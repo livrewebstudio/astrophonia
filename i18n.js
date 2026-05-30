@@ -47,10 +47,10 @@ const translations = {
     card2_subtitle: "432Hz · Starting Over",
     card2_text: "I left my country carrying only what I could hold inside me. This composition was born between two worlds — in the space where what you left still echoes and what lies ahead has no map yet. A sonic mirror for those in the middle of a crossing: neither here nor there, but moving.",
 
-    card3_freq_label: "New Chapter",
-    card3_title: "The Open Door",
-    card3_subtitle: "432Hz · New Chapter",
-    card3_text: "A new composition in progress — for the moment when something ends and something unnamed begins. The in-between space before a new chapter takes shape.",
+    card3_freq_label: "Finding Real Love",
+    card3_title: "Love Across The Ocean",
+    card3_subtitle: "432Hz · Finding Real Love",
+    card3_text: "Love doesn't ask for permission or timing. This song was born from an unexpected moment — a stranger on a bus, a casual conversation, a name I almost forgot. Love found me at 49, across an ocean I hadn't planned to cross. Not because I was looking. Because it was simply meant to happen.For everyone who stopped believing — it might already be on its way.",
 
     card4_freq_label: "Letting Go",
     card4_title: "The Weight You Set Down",

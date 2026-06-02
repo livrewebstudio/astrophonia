@@ -39,28 +39,22 @@ const translations = {
     // Cards
     card1_freq_label: "Loss & Grief",
     card1_title: "Beyond the Silence",
-    card1_subtitle: "432Hz · Loss & Grief",
     card1_text: "I lost my partner during Covid — I was living alone, with no one to grieve alongside. I had to find solid ground when everything collapsed. This composition was born in that silence. It carries the weight of what was lost and the stillness of what came after. A sonic companion for those who walk through their own grief, at their own pace.",
 
     card2_freq_label: "Starting Over",
     card2_title: "The Uncharted Self",
-    card2_subtitle: "432Hz · Starting Over",
     card2_text: "I left my country carrying only what I could hold inside me. This composition was born between two worlds — in the space where what you left still echoes and what lies ahead has no map yet. A sonic mirror for those in the middle of a crossing: neither here nor there, but moving.",
 
     card3_freq_label: "Finding Real Love",
     card3_title: "Love Across The Ocean",
-    card3_subtitle: "432Hz · Finding Real Love",
-    card3_text: "Love doesn't ask for permission or timing. This song was born from an unexpected moment — a stranger on a bus, a casual conversation, a name I almost forgot. Love found me at 49, across an ocean I hadn't planned to cross. Not because I was looking. Because it was simply meant to happen.For everyone who stopped believing — it might already be on its way.",
+    card3_text: "Love doesn't ask for permission or timing. This song was born from an unexpected moment — a stranger on a bus, a casual conversation, a name I almost forgot. Love found me at 49, across an ocean I hadn't planned to cross. Not because I was looking. Because it was simply meant to happen. For everyone who stopped believing — it might already be on its way.",
 
     card4_freq_label: "Letting Go",
     card4_title: "The Weight You Set Down",
-    card4_subtitle: "432Hz · Letting Go",
     card4_text: "A sonic journey for the quiet act of releasing — things, places, versions of yourself. Not a rupture, but a setting down. Composed for the moment when you finally choose to travel lighter.",
 
-    btn_preview: "Audio Preview",
-    btn_journey: "Get Journey",
+    card_listen_free: "Listen for free",
     btn_coming: "Coming Soon",
-    card_external_note: "Opens in Bandcamp · Secure · No data stored here",
 
     freq_suggestion_title: "About 432Hz",
 
@@ -68,11 +62,6 @@ const translations = {
     contact_eyebrow: "Reach Out",
     contact_title: "Contact",
     contact_text: "Feel free to reach out. Whether you have questions about the journeys, want to use them in your practice, or simply want to share your experience — I am here.",
-
-    // Modal
-    modal_text: "You are about to visit Bandcamp, our secure music platform. Your purchase is processed there — no personal data is stored on this website.",
-    modal_continue: "Continue to Bandcamp →",
-    modal_cancel: "Go back",
 
     // Cookie
     cookie_text: "This site uses essential cookies to ensure proper functionality. No personal data is collected or stored. By continuing, you agree to our Cookie Policy.",
@@ -119,28 +108,22 @@ const translations = {
     // Cards
     card1_freq_label: "Perdita e Dolore",
     card1_title: "Beyond the Silence",
-    card1_subtitle: "432Hz · Perdita e Dolore",
     card1_text: "Ho perso il mio compagno durante il Covid — vivevo sola, senza nessuno con cui condividere il dolore. Ho dovuto trovare il mio equilibrio quando tutto è crollato. Questa composizione è nata in quel silenzio. Porta il peso di ciò che è andato perduto e la quiete di ciò che è venuto dopo. Una compagnia sonora per chi attraversa il proprio lutto, al proprio ritmo.",
 
     card2_freq_label: "Ricominciare",
     card2_title: "The Uncharted Self",
-    card2_subtitle: "432Hz · Ricominciare",
     card2_text: "Ho lasciato il mio paese portando solo ciò che potevo tenere dentro di me. Questa composizione è nata tra due mondi — nello spazio in cui ciò che hai lasciato risuona ancora e ciò che ti aspetta non ha ancora una mappa. Uno specchio sonico per chi è nel mezzo di un passaggio: né qui né là, ma in movimento.",
 
     card3_freq_label: "Un Vero Amore",
     card3_title: "Love Across The Ocean",
-    card3_subtitle: "432Hz · Un Vero Amore",
     card3_text: "L'amore non chiede permesso né aspetta il momento giusto. Questa canzone è nata da un istante inaspettato — uno sconosciuto su un autobus, una conversazione casuale, un nome che quasi avevo dimenticato. L'amore mi ha trovata a 49 anni, dall'altra parte di un oceano che non avevo in programma di attraversare. Non perché stessi cercando. Perché era semplicemente destinato ad accadere. Per chi ha smesso di credere — forse è già in arrivo.",
 
     card4_freq_label: "Lasciar Andare",
     card4_title: "The Weight You Set Down",
-    card4_subtitle: "432Hz · Lasciar Andare",
     card4_text: "Un viaggio sonico per l'atto silenzioso del lasciare — cose, luoghi, versioni di te stesso. Non una rottura, ma un posare. Composto per il momento in cui scegli finalmente di viaggiare più leggero.",
 
-    btn_preview: "Anteprima Audio",
-    btn_journey: "Ottieni il Viaggio",
+    card_listen_free: "Ascolta gratis",
     btn_coming: "Prossimamente",
-    card_external_note: "Si apre su Bandcamp · Sicuro · Nessun dato salvato qui",
 
     freq_suggestion_title: "Il 432Hz",
 
@@ -148,11 +131,6 @@ const translations = {
     contact_eyebrow: "Contattami",
     contact_title: "Contatto",
     contact_text: "Sentiti libero di contattarmi. Che tu abbia domande sui viaggi sonici, voglia utilizzarli nella tua pratica, o semplicemente condividere la tua esperienza — sono qui.",
-
-    // Modal
-    modal_text: "Stai per visitare Bandcamp, la nostra piattaforma musicale sicura. Il tuo acquisto viene elaborato lì — nessun dato personale viene archiviato su questo sito.",
-    modal_continue: "Continua su Bandcamp →",
-    modal_cancel: "Torna indietro",
 
     // Cookie
     cookie_text: "Questo sito utilizza cookie essenziali per garantire il corretto funzionamento. Nessun dato personale viene raccolto. Continuando, accetti la nostra Cookie Policy.",
@@ -199,28 +177,22 @@ const translations = {
     // Cards
     card1_freq_label: "Perda e Luto",
     card1_title: "Beyond the Silence",
-    card1_subtitle: "432Hz · Perda e Luto",
     card1_text: "Perdi meu companheiro durante a Covid — morava sozinha, não pude viver esse luto junto de alguém. Precisei encontrar meu próprio chão quando tudo desabou. Esta composição nasceu naquele silêncio. Ela carrega o peso do que foi perdido e a quietude do que veio depois. Uma companhia sônica para quem atravessa o próprio luto, no próprio ritmo.",
 
     card2_freq_label: "Novos Horizontes",
     card2_title: "The Uncharted Self",
-    card2_subtitle: "432Hz · Novos Horizontes",
     card2_text: "Deixei meu país carregando apenas o que cabia dentro de mim. Esta composição nasceu entre dois mundos — no espaço em que o que você deixou ainda ecoa e o que está à frente ainda não tem mapa. Um espelho sônico para quem está no meio de uma travessia: nem aqui nem lá, mas em movimento.",
 
     card3_freq_label: "Amor Verdadeiro",
     card3_title: "Love Across The Ocean",
-    card3_subtitle: "432Hz · Amor Verdadeiro",
     card3_text: "O amor não pede permissão nem espera o momento certo. Esta música nasceu de um instante inesperado — uma estranha num ônibus, uma conversa casual, um nome, um contato. O amor me encontrou aos 49 anos, do outro lado de um oceano que eu não planejava cruzar. Não porque eu estivesse procurando. Porque simplesmente estava destinado a acontecer. Para quem parou de acreditar — talvez já esteja a caminho.",
 
     card4_freq_label: "Deixar Ir",
     card4_title: "The Weight You Set Down",
-    card4_subtitle: "432Hz · Deixar Ir",
     card4_text: "Uma jornada sônica para o ato silencioso de soltar — coisas, lugares, versões de si mesmo. Não uma ruptura, mas um pousar. Composta para o momento em que você finalmente escolhe viajar mais leve.",
 
-    btn_preview: "Prévia do Áudio",
-    btn_journey: "Obter Jornada",
+    card_listen_free: "Ouça gratuitamente",
     btn_coming: "Em Breve",
-    card_external_note: "Abre no Bandcamp · Seguro · Nenhum dado armazenado aqui",
 
     freq_suggestion_title: "Sobre o 432Hz",
 
@@ -228,11 +200,6 @@ const translations = {
     contact_eyebrow: "Fale Comigo",
     contact_title: "Contato",
     contact_text: "Sinta-se à vontade para entrar em contato. Seja para tirar dúvidas sobre as jornadas, para usá-las na sua prática, ou simplesmente para compartilhar a sua experiência.",
-
-    // Modal
-    modal_text: "Você está prestes a visitar o Bandcamp, nossa plataforma musical segura. Sua compra é processada com total segurança.",
-    modal_continue: "Continuar para o Bandcamp →",
-    modal_cancel: "Voltar",
 
     // Cookie
     cookie_text: "Este site usa cookies essenciais para garantir o funcionamento correto. Nenhum dado pessoal é coletado ou armazenado. Ao continuar, você concorda com a nossa Política de Cookies.",
@@ -276,11 +243,9 @@ function applyTranslations(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (t[key]) {
-      // Avoid overwriting inner HTML with child elements (cards, etc.)
       if (el.children.length === 0) {
         el.textContent = t[key];
       } else {
-        // Only update text nodes
         el.childNodes.forEach(node => {
           if (node.nodeType === 3) node.textContent = '';
         });

@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════
 //  AstroPhonia — Main JS
-//  Starfield · Navbar · Scroll Reveal · Modal · Cookies
+//  Starfield · Navbar · Scroll Reveal · Cookies
 // ═══════════════════════════════════════════════════════
 
 // ─── STARFIELD CANVAS ───
@@ -101,46 +101,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ─── REDIRECT MODAL ───
-let pendingHref = '#';
-
-function openModal(e, trackName, trackSub, type) {
-  e.preventDefault();
-  const t = translations[currentLang] || translations['en'];
-
-  document.getElementById('modal-track-name').textContent = trackName;
-  document.getElementById('modal-track-sub').textContent = trackSub;
-
-  const textEl = document.getElementById('modal-text');
-  if (textEl) textEl.textContent = t.modal_text || '';
-
-  const continueBtn = document.getElementById('modal-continue-btn');
-  if (continueBtn) {
-    continueBtn.textContent = t.modal_continue || 'Continue to Bandcamp →';
-    // Replace with actual Bandcamp link when live
-pendingHref = e.currentTarget.href;
-continueBtn.href = pendingHref;
-  }
-
-  document.getElementById('redirect-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('redirect-modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// Close modal on backdrop click
-document.getElementById('redirect-modal')?.addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
-
-// Keyboard close
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
-
 // ─── COOKIE BANNER ───
 function acceptCookies() {
   localStorage.setItem('ap_cookies', '1');
@@ -149,7 +109,6 @@ function acceptCookies() {
 
 function initCookieBanner() {
   if (!localStorage.getItem('ap_cookies')) {
-    // Show after small delay
     setTimeout(() => {
       document.getElementById('cookie-banner')?.classList.remove('hidden');
     }, 2200);
@@ -162,7 +121,6 @@ function initCookieBanner() {
 document.addEventListener('DOMContentLoaded', () => {
   initCookieBanner();
 
-  // If site wrapper is shown (lang already selected), init reveal
   const wrapper = document.getElementById('site-wrapper');
   if (wrapper && wrapper.style.display !== 'none') {
     revealOnScroll();

@@ -467,7 +467,7 @@ section {
 }
 
 /* ============================================================
-   THERAPY SECTION (Sonic Soul Therapy)
+   THERAPY SECTION
    ============================================================ */
 #therapy {
   padding: 6rem 0;
@@ -548,29 +548,6 @@ section {
   text-align: center;
   margin-bottom: 1rem;
 }
-.audios-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-.audios-nav-btn {
-  font-family: var(--font-display);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: var(--text-dim);
-  padding: 0.4rem 1rem;
-  border: 1px solid transparent;
-  cursor: pointer;
-  background: transparent;
-  transition: all 0.3s;
-}
-.audios-nav-btn:hover,
-.audios-nav-btn.active {
-  color: var(--gold);
-  border-color: var(--gold-border);
-}
 .audios-description {
   font-family: var(--font-heading);
   font-size: 1.12rem;
@@ -582,7 +559,7 @@ section {
   font-weight: 400;
 }
 
-/* Audio Cards Grid */
+/* ── Audio Cards Grid ── */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -590,6 +567,12 @@ section {
   max-width: 860px;
   margin: 0 auto;
 }
+
+/* Tablet breakpoint */
+@media (max-width: 720px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
 .audio-card {
   background: var(--card-bg);
   border: 1px solid var(--gold-border);
@@ -600,6 +583,10 @@ section {
   transition: all 0.4s var(--ease);
   position: relative;
   overflow: hidden;
+  /* flex column so platform buttons always sit at the bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .audio-card::before {
   content: '';
@@ -610,7 +597,7 @@ section {
   transform: scaleX(0);
   transition: transform 0.5s var(--ease);
 }
-.audio-card:hover { 
+.audio-card:hover {
   border-color: var(--gold);
   box-shadow: 0 8px 40px rgba(197,160,105,0.15), inset 0 0 60px rgba(197,160,105,0.03);
   transform: translateY(-4px);
@@ -629,7 +616,9 @@ section {
   width: 50px;
   filter: drop-shadow(0 0 12px rgba(197,160,105,0.5));
 }
-.card-freq-badge {
+
+/* card-tag: freq + theme badge */
+.card-tag {
   display: inline-block;
   font-family: var(--font-display);
   font-size: 0.6rem;
@@ -639,6 +628,7 @@ section {
   padding: 0.2rem 0.8rem;
   margin-bottom: 1rem;
 }
+
 .card-title {
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -647,13 +637,6 @@ section {
   letter-spacing: 0.05em;
   margin-bottom: 0.3rem;
 }
-.card-subtitle {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--gold);
-  margin-bottom: 0.9rem;
-}
 .card-text {
   font-family: var(--font-heading);
   font-size: 0.97rem;
@@ -661,52 +644,67 @@ section {
   color: #c0c4d8;
   line-height: 1.7;
   margin-bottom: 1.4rem;
+  flex: 1; /* pushes actions to bottom */
 }
+
+/* ── Platform Buttons ── */
 .card-actions {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.card-listen-label {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.card-platforms {
+  display: flex;
+  gap: 0.55rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-platform {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
-}
-.btn-preview {
-  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.2rem;
+  gap: 0.28rem;
+  width: 54px;
+  height: 54px;
   border: 1px solid var(--gold-border);
-  color: var(--gold);
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
+  color: var(--gold-dark);
   background: transparent;
-  cursor: pointer;
-  transition: all 0.3s;
   text-decoration: none;
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
 }
-.btn-preview:hover {
-  background: rgba(197,160,105,0.1);
+.btn-platform i {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+.btn-platform span {
+  font-family: var(--font-display);
+  font-size: 0.44rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.btn-platform:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(197,160,105,0.2);
+  color: var(--gold);
   border-color: var(--gold);
 }
-.btn-journey {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-  color: var(--bg-deep);
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-}
-.btn-journey:hover {
-  box-shadow: 0 4px 24px rgba(197,160,105,0.4);
-  transform: translateY(-1px);
-}
+/* Platform brand colours on hover */
+.btn-platform[data-platform="spotify"]:hover  { border-color: #1DB954; color: #1DB954; box-shadow: 0 4px 16px rgba(29,185,84,0.25); }
+.btn-platform[data-platform="youtube"]:hover  { border-color: #FF0000; color: #FF0000; box-shadow: 0 4px 16px rgba(255,0,0,0.2); }
+.btn-platform[data-platform="amazon"]:hover   { border-color: #FF9900; color: #FF9900; box-shadow: 0 4px 16px rgba(255,153,0,0.25); }
+.btn-platform[data-platform="bandcamp"]:hover { border-color: #1DA0C3; color: #1DA0C3; box-shadow: 0 4px 16px rgba(29,160,195,0.25); }
+
+/* Coming soon button */
 .btn-coming {
   padding: 0.65rem 1.2rem;
   border: 1px solid var(--text-muted);
@@ -717,16 +715,8 @@ section {
   background: transparent;
   cursor: not-allowed;
 }
-.card-external-note {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  color: var(--gold-dark);
-  margin-top: 0.5rem;
-  letter-spacing: 0.05em;
-  opacity: 0.8;
-}
 
-/* Frequency suggestion section */
+/* Frequency info block */
 .freq-suggestion {
   margin-top: 3rem;
   padding: 2rem;
@@ -755,92 +745,6 @@ section {
   border: 1px solid var(--gold-border);
   color: var(--gold-dark);
 }
-
-/* ============================================================
-   REDIRECT MODAL (Bandcamp)
-   ============================================================ */
-#redirect-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 8888;
-  background: rgba(5,8,19,0.92);
-  backdrop-filter: blur(12px);
-  align-items: center;
-  justify-content: center;
-}
-#redirect-modal.open { display: flex; }
-.modal-box {
-  background: linear-gradient(145deg, #121E3D, #2C1E3D);
-  border: 1px solid var(--gold-border);
-  padding: 3rem 2.5rem;
-  max-width: 420px;
-  width: 90%;
-  text-align: center;
-  position: relative;
-}
-.modal-box::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 10%; right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-.modal-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.modal-title {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-.modal-subtitle {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--text-dim);
-  margin-bottom: 0.3rem;
-}
-.modal-text {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--text-dim);
-  margin: 1rem 0 2rem;
-  line-height: 1.7;
-}
-.modal-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-.modal-continue {
-  display: block;
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-  color: var(--bg-deep);
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.modal-continue:hover { box-shadow: 0 4px 20px rgba(197,160,105,0.4); }
-.modal-cancel {
-  font-family: var(--font-display);
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-.modal-cancel:hover { color: var(--text); }
 
 /* ============================================================
    CONTACT SECTION
@@ -1147,9 +1051,7 @@ section {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
-  .nav-links, .nav-lang, .nav-socials {
-    display: none;
-  }
+  .nav-links, .nav-lang, .nav-socials { display: none; }
   .nav-hamburger { display: flex; }
   .footer-inner {
     grid-template-columns: 1fr;
@@ -1165,4 +1067,6 @@ section {
   #cookie-banner { flex-direction: column; align-items: flex-start; }
   .cookie-actions { width: 100%; }
   .btn-cookie-accept, .btn-cookie-more { flex: 1; text-align: center; justify-content: center; }
+  /* On very small screens, platform buttons shrink gracefully */
+  .btn-platform { width: 50px; height: 50px; }
 }

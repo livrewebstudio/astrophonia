@@ -49,9 +49,9 @@ const translations = {
     card3_title: "Love Across The Ocean",
     card3_text: "Love doesn't ask for permission or timing. This song was born from an unexpected moment — a stranger on a bus, a casual conversation, a name I almost forgot. Love found me at 49, across an ocean I hadn't planned to cross. Not because I was looking. Because it was simply meant to happen. For everyone who stopped believing — it might already be on its way.",
 
-    card4_freq_label: "Letting Go",
-    card4_title: "The Weight You Set Down",
-    card4_text: "A sonic journey for the quiet act of releasing — things, places, versions of yourself. Not a rupture, but a setting down. Composed for the moment when you finally choose to travel lighter.",
+    card4_freq_label: "Sound Relief",
+    card4_title: "Exiety",
+    card4_text: "The mind can sometimes become a noisy labyrinth, a place where the chest tightens and the pace quickens. This song was born from the search for a breathing room — a escape point between the exit and anxiety. "Exiety" is not a promise of eternal calm; it is simply an alternative to the chaos. A 432Hz space for decompression. For anyone who needs to slow the world down for a few minutes — the exit might just be in the sound.",
 
     card_listen_free: "Listen for free",
     btn_coming: "Coming Soon",
@@ -118,9 +118,9 @@ const translations = {
     card3_title: "Love Across The Ocean",
     card3_text: "L'amore non chiede permesso né aspetta il momento giusto. Questa canzone è nata da un istante inaspettato — uno sconosciuto su un autobus, una conversazione casuale, un nome che quasi avevo dimenticato. L'amore mi ha trovata a 49 anni, dall'altra parte di un oceano che non avevo in programma di attraversare. Non perché stessi cercando. Perché era semplicemente destinato ad accadere. Per chi ha smesso di credere — forse è già in arrivo.",
 
-    card4_freq_label: "Lasciar Andare",
-    card4_title: "The Weight You Set Down",
-    card4_text: "Un viaggio sonico per l'atto silenzioso del lasciare — cose, luoghi, versioni di te stesso. Non una rottura, ma un posare. Composto per il momento in cui scegli finalmente di viaggiare più leggero.",
+    card4_freq_label: "Sollievo Sonoro",
+    card4_title: "Exiety",
+    card4_text: "La mente a volte diventa un labirinto rumoroso, un luogo dove il petto si stringe e il ritmo accelera. Questo brano nasce dalla ricerca di un respiro — una via di fuga tra l'uscita e l'ansia. "Exiety" non è una promessa di calma eterna; è semplicemente un'alternativa al caos. Uno spazio a 432Hz per decomprimere. Per chi ha bisogno di far rallentare il mondo per qualche minuto — la via d'uscita potrebbe essere nel suono.",
 
     card_listen_free: "Ascolta gratis",
     btn_coming: "Prossimamente",
@@ -187,9 +187,9 @@ const translations = {
     card3_title: "Love Across The Ocean",
     card3_text: "O amor não pede permissão nem espera o momento certo. Esta música nasceu de um instante inesperado — uma estranha num ônibus, uma conversa casual, um nome, um contato. O amor me encontrou aos 49 anos, do outro lado de um oceano que eu não planejava cruzar. Não porque eu estivesse procurando. Porque simplesmente estava destinado a acontecer. Para quem parou de acreditar — talvez já esteja a caminho.",
 
-    card4_freq_label: "Deixar Ir",
-    card4_title: "The Weight You Set Down",
-    card4_text: "Uma jornada sônica para o ato silencioso de soltar — coisas, lugares, versões de si mesmo. Não uma ruptura, mas um pousar. Composta para o momento em que você finalmente escolhe viajar mais leve.",
+    card4_freq_label: "Alívio Sonoro",
+    card4_title: "Exiety",
+    card4_text: "A mente às vezes se torna um labirinto barulhento, um lugar onde o peito aperta e o ritmo acelera. Esta música nasceu da busca por um respiro — um ponto de fuga entre a saída e a ansiedade. "Exiety" não é uma promessa de calmaria eterna; é simplesmente uma alternativa ao caos. Um espaço de 432Hz para descompressão. Para quem precisa desacelerar o mundo por alguns minutos — a saída pode estar no som.",
 
     card_listen_free: "Ouça gratuitamente",
     btn_coming: "Em Breve",

@@ -51,7 +51,7 @@ const translations = {
 
     card4_freq_label: "Sound Relief",
     card4_title: "Exiety",
-    card4_text: "The mind can sometimes become a noisy labyrinth, a place where the chest tightens and the pace quickens. This song was born from the search for a breathing room — a escape point between the exit and anxiety. "Exiety" is not a promise of eternal calm; it is simply an alternative to the chaos. A 432Hz space for decompression. For anyone who needs to slow the world down for a few minutes — the exit might just be in the sound.",
+    card4_text: "The mind can sometimes become a noisy labyrinth, a place where the chest tightens and the pace quickens. This song was born from the search for a breathing room — a escape point between the exit and anxiety. «Exiety» is not a promise of eternal calm; it is simply an alternative to the chaos. A 432Hz space for decompression. For anyone who needs to slow the world down for a few minutes — the exit might just be in the sound.",
 
     card_listen_free: "Listen for free",
     btn_coming: "Coming Soon",
@@ -120,7 +120,7 @@ const translations = {
 
     card4_freq_label: "Sollievo Sonoro",
     card4_title: "Exiety",
-    card4_text: "La mente a volte diventa un labirinto rumoroso, un luogo dove il petto si stringe e il ritmo accelera. Questo brano nasce dalla ricerca di un respiro — una via di fuga tra l'uscita e l'ansia. "Exiety" non è una promessa di calma eterna; è semplicemente un'alternativa al caos. Uno spazio a 432Hz per decomprimere. Per chi ha bisogno di far rallentare il mondo per qualche minuto — la via d'uscita potrebbe essere nel suono.",
+    card4_text: "La mente a volte diventa un labirinto rumoroso, un luogo dove il petto si stringe e il ritmo accelera. Questo brano nasce dalla ricerca di un respiro — una via di fuga tra l'uscita e l'ansia. «Exiety» non è una promessa di calma eterna; è semplicemente un'alternativa al caos. Uno spazio a 432Hz per decomprimere. Per chi ha bisogno di far rallentare il mondo per qualche minuto — la via d'uscita potrebbe essere nel suono.",
 
     card_listen_free: "Ascolta gratis",
     btn_coming: "Prossimamente",
@@ -189,7 +189,7 @@ const translations = {
 
     card4_freq_label: "Alívio Sonoro",
     card4_title: "Exiety",
-    card4_text: "A mente às vezes se torna um labirinto barulhento, um lugar onde o peito aperta e o ritmo acelera. Esta música nasceu da busca por um respiro — um ponto de fuga entre a saída e a ansiedade. "Exiety" não é uma promessa de calmaria eterna; é simplesmente uma alternativa ao caos. Um espaço de 432Hz para descompressão. Para quem precisa desacelerar o mundo por alguns minutos — a saída pode estar no som.",
+    card4_text: "A mente às vezes se torna um labirinto barulhento, um lugar onde o peito aperta e o ritmo acelera. Esta música nasceu da busca por um respiro — um ponto de fuga entre a saída e a ansiedade. «Exiety» não é uma promessa de calmaria eterna; é simplesmente uma alternativa ao caos. Um espaço de 432Hz para descompressão. Para quem precisa desacelerar o mundo por alguns minutos — a saída pode estar no som.",
 
     card_listen_free: "Ouça gratuitamente",
     btn_coming: "Em Breve",

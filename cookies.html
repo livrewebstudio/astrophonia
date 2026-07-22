@@ -2,197 +2,244 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Cookie Policy — AstroPhonia</title>
+  <meta name="description" content="AstroPhonia cookie policy — essential technical storage only." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#050813" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Raleway:wght@300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<canvas id="starfield"></canvas>
-<div class="bg-gradient"></div>
-<div id="site-wrapper" style="display:block">
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="bg-gradient" aria-hidden="true"></div>
+
+<div id="site-wrapper">
 
   <nav id="navbar" class="scrolled">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo-transparent.png" alt="AstroPhonia" />
+      <img src="images/logo-transparent.png" alt="" />
       <span class="nav-logo-text">AstroPhonia</span>
     </a>
+
     <ul class="nav-links">
-      <li><a href="index.html#therapy">Sonic Therapy</a></li>
-      <li><a href="index.html#audios">Healing Audios</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#method"   data-i18n="nav_method">The Method</a></li>
+      <li><a href="index.html#journeys" data-i18n="nav_journeys">Sonic Journeys</a></li>
+      <li><a href="index.html#contact"  data-i18n="nav_contact">Contact</a></li>
     </ul>
-    <div style="display:flex;align-items:center;gap:1rem;">
+
+    <div class="nav-right">
       <div class="nav-socials">
-        <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="nav-social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="nav-social-icon"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:contato@astrophonia.com" class="nav-social-icon"><i class="far fa-envelope"></i></a>
+        <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="icon-circle" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="icon-circle" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="mailto:contato@astrophonia.com" class="icon-circle" aria-label="Email"><i class="far fa-envelope" aria-hidden="true"></i></a>
       </div>
+
+      <div class="nav-lang">
+        <button class="nav-lang-btn" id="lang-toggle-btn" onclick="toggleLangDropdown()" aria-haspopup="true" aria-expanded="false">
+          <span id="current-flag">🇬🇧</span>
+          <span id="current-lang-label">EN</span>
+          <i class="fas fa-chevron-down" style="font-size:0.5rem;margin-left:2px;" aria-hidden="true"></i>
+        </button>
+        <div class="nav-lang-dropdown" id="lang-dropdown">
+          <button onclick="setLang('en')">🇬🇧 &nbsp; EN</button>
+          <button onclick="setLang('it')">🇮🇹 &nbsp; IT</button>
+          <button onclick="setLang('pt')">🇧🇷 &nbsp; PT</button>
+        </div>
+      </div>
+
+      <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <nav class="nav-mobile" id="mobile-nav">
+    <a href="index.html#method"   class="nav-mobile-link" data-i18n="nav_method"   onclick="closeMobileNav()">The Method</a>
+    <a href="index.html#journeys" class="nav-mobile-link" data-i18n="nav_journeys" onclick="closeMobileNav()">Sonic Journeys</a>
+    <a href="index.html#contact"  class="nav-mobile-link" data-i18n="nav_contact"  onclick="closeMobileNav()">Contact</a>
+    <div class="nav-mobile-langs">
+      <button class="lang-btn" onclick="setLang('en');closeMobileNav()">🇬🇧 EN</button>
+      <button class="lang-btn" onclick="setLang('it');closeMobileNav()">🇮🇹 IT</button>
+      <button class="lang-btn" onclick="setLang('pt');closeMobileNav()">🇧🇷 PT</button>
     </div>
   </nav>
 
   <div class="policy-page">
     <div class="policy-inner">
-      <a href="index.html" class="policy-back"><i class="fas fa-arrow-left"></i> &nbsp; AstroPhonia</a>
+      <a href="index.html" class="policy-back">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp; <span data-i18n="footer_back">Back to AstroPhonia</span>
+      </a>
 
       <h1>Cookie Policy</h1>
-      <p class="policy-date">Last updated: April 2025</p>
+      <p class="policy-date" id="policy-date">Last updated: July 2026</p>
 
       <div class="policy-lang-tabs">
-        <button class="policy-lang-tab active" onclick="showPolicyLang('cp-en',this)">🇬🇧 English</button>
-        <button class="policy-lang-tab" onclick="showPolicyLang('cp-it',this)">🇮🇹 Italiano</button>
-        <button class="policy-lang-tab" onclick="showPolicyLang('cp-pt',this)">🇧🇷 Português</button>
+        <button class="policy-lang-tab" data-lang="en" onclick="setLang('en')">🇬🇧 English</button>
+        <button class="policy-lang-tab" data-lang="it" onclick="setLang('it')">🇮🇹 Italiano</button>
+        <button class="policy-lang-tab" data-lang="pt" onclick="setLang('pt')">🇧🇷 Português</button>
       </div>
 
-      <!-- ── ENGLISH ── -->
-      <div class="policy-section active" id="cp-en">
+      <!-- ══════════ ENGLISH ══════════ -->
+      <div class="policy-section" id="cp-en">
         <h2>What are Cookies?</h2>
-        <p>Cookies are small text files stored on your device by your browser when you visit a website. They can remember your preferences and choices, making your experience smoother.</p>
+        <p>Cookies are small text files a website saves on your device through your browser. They can remember your preferences and choices so your experience runs more smoothly.</p>
 
         <div class="policy-divider"></div>
-        <h2>Cookies We Use</h2>
-        <p>AstroPhonia uses <strong>only essential cookies</strong>. These are strictly necessary for the website to function and cannot be switched off. They include:</p>
+        <h2>What This Site Stores</h2>
+        <p>AstroPhonia uses <strong>only essential technical storage</strong>. It is strictly necessary for the site to work and cannot be switched off:</p>
         <ul>
-          <li><strong>ap_lang</strong> — Remembers your chosen language (EN / IT / PT). Expires: session / local storage (no expiry, clears with browser data).</li>
-          <li><strong>ap_cookies</strong> — Records that you have acknowledged this cookie notice. Expires: local storage.</li>
+          <li><strong>ap_lang</strong> — remembers the language you chose (EN / IT / PT).</li>
+          <li><strong>ap_cookies</strong> — records that you have seen this cookie notice.</li>
         </ul>
-        <p>Both values are stored in <strong>localStorage</strong> (not traditional cookies), meaning they are never transmitted to any server and remain only on your device.</p>
+        <p>Both values are kept in <strong>localStorage</strong>, not in traditional cookies. They never leave your device and are never transmitted to any server. They have no expiry date and are removed when you clear your browser data.</p>
+        <p>Because this storage is strictly necessary to provide the service you requested, no prior consent is required under Art. 122 of the Italian Privacy Code and the ePrivacy Directive. The notice you see is informational.</p>
 
         <div class="policy-divider"></div>
         <h2>What We Do NOT Use</h2>
-        <p>We do <strong>not</strong> use:</p>
         <ul>
           <li>Advertising or tracking cookies</li>
-          <li>Analytics tools (Google Analytics, etc.)</li>
+          <li>Analytics tools (Google Analytics or similar)</li>
           <li>Social media pixels or trackers</li>
-          <li>Any third-party cookie scripts</li>
+          <li>Profiling of any kind</li>
+          <li>External fonts, icon libraries or scripts loaded from third-party servers</li>
         </ul>
+        <p>All resources needed by this site — fonts, icons, images, scripts — are served from this same domain, so browsing these pages sends nothing to third parties.</p>
 
         <div class="policy-divider"></div>
         <h2>Third-Party Platforms</h2>
-        <p>When you leave this site to visit Bandcamp, their own cookie and privacy policies apply. We have no control over their cookies. You can review their policy at <a href="https://bandcamp.com/privacy" target="_blank" rel="noopener">bandcamp.com/privacy</a>.</p>
+        <p>When you follow a link to Spotify, YouTube, Amazon Music, Bandcamp, Instagram or WhatsApp, you leave this site and their own cookie and privacy policies apply. We have no control over the cookies those platforms set.</p>
 
         <div class="policy-divider"></div>
-        <h2>How to Control Cookies</h2>
-        <p>You can delete or block localStorage data through your browser settings at any time. Doing so will reset your language preference and cookie acknowledgement. Most browsers also offer "private" or "incognito" modes that do not retain localStorage data.</p>
+        <h2>How to Control This Storage</h2>
+        <p>You can delete or block localStorage data through your browser settings at any time. Doing so simply resets your language choice and the cookie notice. Private or incognito windows do not retain this data at all.</p>
 
         <div class="policy-divider"></div>
         <h2>Contact</h2>
-        <p>For any questions about our cookie use: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>Data controller: <strong>Luciana Vidal Romano</strong><br />
+        Questions about this policy: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
       </div>
 
-      <!-- ── ITALIANO ── -->
+      <!-- ══════════ ITALIANO ══════════ -->
       <div class="policy-section" id="cp-it">
         <h2>Cosa sono i Cookie?</h2>
-        <p>I cookie sono piccoli file di testo memorizzati sul tuo dispositivo dal browser quando visiti un sito web. Possono ricordare le tue preferenze e scelte, rendendo la tua esperienza più fluida.</p>
+        <p>I cookie sono piccoli file di testo che un sito salva sul tuo dispositivo tramite il browser. Possono ricordare le tue preferenze e scelte per rendere l'esperienza più fluida.</p>
 
         <div class="policy-divider"></div>
-        <h2>Cookie Utilizzati</h2>
-        <p>AstroPhonia utilizza <strong>solo cookie essenziali</strong>. Questi sono strettamente necessari per il funzionamento del sito e non possono essere disattivati. Includono:</p>
+        <h2>Cosa Memorizza Questo Sito</h2>
+        <p>AstroPhonia utilizza <strong>solo archiviazione tecnica essenziale</strong>, strettamente necessaria al funzionamento del sito e non disattivabile:</p>
         <ul>
-          <li><strong>ap_lang</strong> — Ricorda la lingua scelta (EN / IT / PT). Scadenza: sessionStorage / localStorage (nessuna scadenza, si cancella con i dati del browser).</li>
-          <li><strong>ap_cookies</strong> — Registra che hai accettato questo avviso sui cookie. Scadenza: localStorage.</li>
+          <li><strong>ap_lang</strong> — ricorda la lingua che hai scelto (EN / IT / PT).</li>
+          <li><strong>ap_cookies</strong> — registra che hai preso visione di questo avviso.</li>
         </ul>
-        <p>Entrambi i valori sono memorizzati in <strong>localStorage</strong> (non cookie tradizionali), il che significa che non vengono mai trasmessi ad alcun server e rimangono solo sul tuo dispositivo.</p>
+        <p>Entrambi i valori sono conservati in <strong>localStorage</strong>, non in cookie tradizionali. Non lasciano mai il tuo dispositivo e non vengono trasmessi ad alcun server. Non hanno scadenza e si cancellano svuotando i dati del browser.</p>
+        <p>Trattandosi di archiviazione strettamente necessaria a fornire il servizio richiesto, non è richiesto consenso preventivo ai sensi dell'art. 122 del Codice Privacy e della Direttiva ePrivacy. L'avviso che vedi ha finalità informativa.</p>
 
         <div class="policy-divider"></div>
         <h2>Cosa Non Utilizziamo</h2>
-        <p><strong>Non</strong> utilizziamo:</p>
         <ul>
           <li>Cookie pubblicitari o di tracciamento</li>
-          <li>Strumenti di analisi (Google Analytics, ecc.)</li>
+          <li>Strumenti di analisi (Google Analytics o simili)</li>
           <li>Pixel o tracker di social media</li>
-          <li>Script cookie di terze parti</li>
+          <li>Profilazione di qualsiasi tipo</li>
+          <li>Font, librerie di icone o script caricati da server di terze parti</li>
         </ul>
+        <p>Tutte le risorse necessarie al sito — font, icone, immagini, script — sono servite da questo stesso dominio: navigare queste pagine non invia nulla a terze parti.</p>
 
         <div class="policy-divider"></div>
         <h2>Piattaforme di Terze Parti</h2>
-        <p>Quando lasci questo sito per visitare Bandcamp, si applicano le loro politiche su cookie e privacy. Non abbiamo alcun controllo sui loro cookie. Puoi consultare la loro policy su <a href="https://bandcamp.com/privacy" target="_blank" rel="noopener">bandcamp.com/privacy</a>.</p>
+        <p>Quando segui un collegamento verso Spotify, YouTube, Amazon Music, Bandcamp, Instagram o WhatsApp, lasci questo sito e si applicano le loro policy su cookie e privacy. Non abbiamo alcun controllo sui cookie impostati da quelle piattaforme.</p>
 
         <div class="policy-divider"></div>
-        <h2>Come Controllare i Cookie</h2>
-        <p>Puoi eliminare o bloccare i dati localStorage tramite le impostazioni del tuo browser in qualsiasi momento. In questo modo verranno reimpostate la preferenza della lingua e l'accettazione dei cookie. La maggior parte dei browser offre anche modalità "privata" o "in incognito" che non conservano i dati localStorage.</p>
+        <h2>Come Controllare Questa Archiviazione</h2>
+        <p>Puoi eliminare o bloccare i dati in localStorage dalle impostazioni del browser in qualsiasi momento: verranno semplicemente reimpostate la scelta della lingua e l'avviso sui cookie. Le finestre private o in incognito non conservano affatto questi dati.</p>
 
         <div class="policy-divider"></div>
         <h2>Contatto</h2>
-        <p>Per domande sull'uso dei cookie: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>Titolare del trattamento: <strong>Luciana Vidal Romano</strong><br />
+        Domande su questa policy: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
       </div>
 
-      <!-- ── PORTUGUÊS ── -->
+      <!-- ══════════ PORTUGUÊS ══════════ -->
       <div class="policy-section" id="cp-pt">
         <h2>O que são Cookies?</h2>
-        <p>Cookies são pequenos arquivos de texto armazenados no seu dispositivo pelo navegador ao visitar um site. Eles podem lembrar suas preferências e escolhas, tornando sua experiência mais fluida.</p>
+        <p>Cookies são pequenos arquivos de texto que um site salva no seu dispositivo através do navegador. Eles podem lembrar suas preferências e escolhas para tornar a experiência mais fluida.</p>
 
         <div class="policy-divider"></div>
-        <h2>Cookies que Utilizamos</h2>
-        <p>A AstroPhonia utiliza <strong>apenas cookies essenciais</strong>. Estes são estritamente necessários para o funcionamento do site e não podem ser desativados. Incluem:</p>
+        <h2>O que Este Site Armazena</h2>
+        <p>A AstroPhonia utiliza <strong>apenas armazenamento técnico essencial</strong>, estritamente necessário ao funcionamento do site e que não pode ser desativado:</p>
         <ul>
-          <li><strong>ap_lang</strong> — Lembra o idioma escolhido (EN / IT / PT). Validade: localStorage (sem expiração, apagado com os dados do navegador).</li>
-          <li><strong>ap_cookies</strong> — Registra que você aceitou este aviso de cookies. Validade: localStorage.</li>
+          <li><strong>ap_lang</strong> — lembra o idioma que você escolheu (EN / IT / PT).</li>
+          <li><strong>ap_cookies</strong> — registra que você viu este aviso.</li>
         </ul>
-        <p>Ambos os valores são armazenados em <strong>localStorage</strong> (não cookies tradicionais), o que significa que nunca são transmitidos para nenhum servidor e permanecem apenas no seu dispositivo.</p>
+        <p>Ambos os valores ficam em <strong>localStorage</strong>, não em cookies tradicionais. Nunca saem do seu dispositivo e nunca são transmitidos a nenhum servidor. Não têm prazo de validade e são apagados ao limpar os dados do navegador.</p>
+        <p>Por se tratar de armazenamento estritamente necessário para prestar o serviço solicitado, não é exigido consentimento prévio nos termos do art. 122 do Código de Privacidade italiano e da Diretiva ePrivacy. O aviso que você vê tem finalidade informativa.</p>
 
         <div class="policy-divider"></div>
         <h2>O que Não Utilizamos</h2>
-        <p><strong>Não</strong> utilizamos:</p>
         <ul>
           <li>Cookies de publicidade ou rastreamento</li>
-          <li>Ferramentas de análise (Google Analytics, etc.)</li>
+          <li>Ferramentas de análise (Google Analytics ou similares)</li>
           <li>Pixels ou rastreadores de redes sociais</li>
-          <li>Scripts de cookies de terceiros</li>
+          <li>Perfilamento de qualquer tipo</li>
+          <li>Fontes, bibliotecas de ícones ou scripts carregados de servidores de terceiros</li>
         </ul>
+        <p>Todos os recursos necessários ao site — fontes, ícones, imagens, scripts — são servidos por este mesmo domínio: navegar por estas páginas não envia nada a terceiros.</p>
 
         <div class="policy-divider"></div>
         <h2>Plataformas de Terceiros</h2>
-        <p>Ao sair deste site para visitar o Bandcamp, aplicam-se as políticas de cookies e privacidade deles. Não temos controle sobre os cookies deles. Você pode consultar a política em <a href="https://bandcamp.com/privacy" target="_blank" rel="noopener">bandcamp.com/privacy</a>.</p>
+        <p>Ao seguir um link para Spotify, YouTube, Amazon Music, Bandcamp, Instagram ou WhatsApp, você sai deste site e passam a valer as políticas de cookies e privacidade deles. Não temos controle sobre os cookies definidos por essas plataformas.</p>
 
         <div class="policy-divider"></div>
-        <h2>Como Controlar os Cookies</h2>
-        <p>Você pode excluir ou bloquear dados do localStorage pelas configurações do seu navegador a qualquer momento. Isso vai redefinir sua preferência de idioma e o aceite dos cookies. A maioria dos navegadores também oferece modos "privado" ou "anônimo" que não retêm dados de localStorage.</p>
+        <h2>Como Controlar Este Armazenamento</h2>
+        <p>Você pode excluir ou bloquear os dados do localStorage nas configurações do navegador a qualquer momento: isso apenas redefine a escolha de idioma e o aviso de cookies. Janelas privadas ou anônimas não retêm esses dados.</p>
 
         <div class="policy-divider"></div>
         <h2>Contato</h2>
-        <p>Para dúvidas sobre o uso de cookies: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>Responsável pelo tratamento: <strong>Luciana Vidal Romano</strong><br />
+        Dúvidas sobre esta política: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
       </div>
 
     </div>
   </div>
 
   <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="images/logo-transparent.png" alt="AstroPhonia" />
-        <span class="footer-brand-text">AstroPhonia</span>
-      </div>
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        <a href="cookies.html" class="footer-link">Cookie Policy</a>
-        <a href="index.html#contact" class="footer-link">Contact</a>
-        <span class="footer-link" style="cursor:default;margin-top:0.5rem;">© 2025 AstroPhonia</span>
-      </div>
-      <div class="footer-credit">
-        <p class="footer-credit-text">Website developed by<br />
-          <a href="https://github.com/livrewebstudio/astrophonia" target="_blank" rel="noopener">LiVRe Web Studium</a>
-        </p>
+    <div class="shell">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/logo-transparent.png" alt="" />
+          <span class="footer-brand-text">AstroPhonia</span>
+        </div>
+        <div class="footer-links">
+          <a href="privacy.html" class="footer-link" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="cookies.html" class="footer-link" data-i18n="footer_cookies">Cookie Policy</a>
+          <a href="index.html#contact" class="footer-link" data-i18n="nav_contact">Contact</a>
+          <span class="footer-link" style="cursor:default;">© 2026 AstroPhonia</span>
+        </div>
+        <div class="footer-credit">
+          <p class="footer-credit-text">
+            <span data-i18n="footer_dev">Website developed by</span><br />
+            <a href="http://livrewebstudio.github.io/livre-web-studio/" target="_blank" rel="noopener">LiVRe Web Studium</a>
+          </p>
+        </div>
       </div>
     </div>
   </footer>
 
 </div>
 
-<script>
-  function showPolicyLang(id, btn) {
-    document.querySelectorAll('.policy-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.policy-lang-tab').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    btn.classList.add('active');
-  }
-</script>
+<div id="footer-bar">
+  <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+  <span class="sep" aria-hidden="true">·</span>
+  <a href="cookies.html" data-i18n="footer_cookies">Cookie Policy</a>
+  <span class="sep" aria-hidden="true">·</span>
+  <span>© 2026 AstroPhonia</span>
+</div>
+
+<script src="i18n.js"></script>
+<script src="policy.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

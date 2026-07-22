@@ -2,192 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Privacy Policy — AstroPhonia</title>
+  <meta name="description" content="AstroPhonia privacy policy — GDPR / Regolamento UE 2016/679." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#050813" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Raleway:wght@300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<canvas id="starfield"></canvas>
-<div class="bg-gradient"></div>
-<div id="site-wrapper" style="display:block">
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="bg-gradient" aria-hidden="true"></div>
 
-  <!-- NAVBAR -->
+<div id="site-wrapper">
+
   <nav id="navbar" class="scrolled">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo-transparent.png" alt="AstroPhonia" />
+      <img src="images/logo-transparent.png" alt="" />
       <span class="nav-logo-text">AstroPhonia</span>
     </a>
+
     <ul class="nav-links">
-      <li><a href="index.html#therapy">Sonic Therapy</a></li>
-      <li><a href="index.html#audios">Healing Audios</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#method"   data-i18n="nav_method">The Method</a></li>
+      <li><a href="index.html#journeys" data-i18n="nav_journeys">Sonic Journeys</a></li>
+      <li><a href="index.html#contact"  data-i18n="nav_contact">Contact</a></li>
     </ul>
-    <div style="display:flex;align-items:center;gap:1rem;">
+
+    <div class="nav-right">
       <div class="nav-socials">
-        <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="nav-social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="nav-social-icon"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:contato@astrophonia.com" class="nav-social-icon"><i class="far fa-envelope"></i></a>
+        <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="icon-circle" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="icon-circle" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="mailto:contato@astrophonia.com" class="icon-circle" aria-label="Email"><i class="far fa-envelope" aria-hidden="true"></i></a>
       </div>
-      <button class="nav-hamburger" onclick="this.closest('nav').nextElementSibling.classList.toggle('open')">
+
+      <div class="nav-lang">
+        <button class="nav-lang-btn" id="lang-toggle-btn" onclick="toggleLangDropdown()" aria-haspopup="true" aria-expanded="false">
+          <span id="current-flag">🇬🇧</span>
+          <span id="current-lang-label">EN</span>
+          <i class="fas fa-chevron-down" style="font-size:0.5rem;margin-left:2px;" aria-hidden="true"></i>
+        </button>
+        <div class="nav-lang-dropdown" id="lang-dropdown">
+          <button onclick="setLang('en')">🇬🇧 &nbsp; EN</button>
+          <button onclick="setLang('it')">🇮🇹 &nbsp; IT</button>
+          <button onclick="setLang('pt')">🇧🇷 &nbsp; PT</button>
+        </div>
+      </div>
+
+      <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- POLICY PAGE -->
+  <nav class="nav-mobile" id="mobile-nav">
+    <a href="index.html#method"   class="nav-mobile-link" data-i18n="nav_method"   onclick="closeMobileNav()">The Method</a>
+    <a href="index.html#journeys" class="nav-mobile-link" data-i18n="nav_journeys" onclick="closeMobileNav()">Sonic Journeys</a>
+    <a href="index.html#contact"  class="nav-mobile-link" data-i18n="nav_contact"  onclick="closeMobileNav()">Contact</a>
+    <div class="nav-mobile-langs">
+      <button class="lang-btn" onclick="setLang('en');closeMobileNav()">🇬🇧 EN</button>
+      <button class="lang-btn" onclick="setLang('it');closeMobileNav()">🇮🇹 IT</button>
+      <button class="lang-btn" onclick="setLang('pt');closeMobileNav()">🇧🇷 PT</button>
+    </div>
+  </nav>
+
   <div class="policy-page">
     <div class="policy-inner">
-      <a href="index.html" class="policy-back"><i class="fas fa-arrow-left"></i> &nbsp; AstroPhonia</a>
+      <a href="index.html" class="policy-back">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp; <span data-i18n="footer_back">Back to AstroPhonia</span>
+      </a>
 
       <h1>Privacy Policy</h1>
-      <p class="policy-date">Last updated: April 2025</p>
+      <p class="policy-date" id="policy-date">Last updated: July 2026</p>
 
-      <!-- Language Tabs -->
       <div class="policy-lang-tabs">
-        <button class="policy-lang-tab active" onclick="showPolicyLang('pp-en',this)">🇬🇧 English</button>
-        <button class="policy-lang-tab" onclick="showPolicyLang('pp-it',this)">🇮🇹 Italiano</button>
-        <button class="policy-lang-tab" onclick="showPolicyLang('pp-pt',this)">🇧🇷 Português</button>
+        <button class="policy-lang-tab" data-lang="en" onclick="setLang('en')">🇬🇧 English</button>
+        <button class="policy-lang-tab" data-lang="it" onclick="setLang('it')">🇮🇹 Italiano</button>
+        <button class="policy-lang-tab" data-lang="pt" onclick="setLang('pt')">🇧🇷 Português</button>
       </div>
 
-      <!-- ── ENGLISH ── -->
-      <div class="policy-section active" id="pp-en">
+      <!-- ══════════ ENGLISH ══════════ -->
+      <div class="policy-section" id="pp-en">
         <h2>1. Data Controller</h2>
-        <p>AstroPhonia is operated by its founder. For any privacy-related queries, please contact: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>The data controller for this website is <strong>Luciana Vidal Romano</strong>, owner of the AstroPhonia project.<br />
+        Contact: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>This policy is issued under Regulation (EU) 2016/679 (GDPR). For visitors in Brazil, the corresponding rights under Law 13.709/2018 (LGPD) are also honoured.</p>
 
         <div class="policy-divider"></div>
         <h2>2. What Data We Collect</h2>
-        <p>This website does <strong>not</strong> collect, process, or store any personal data of its visitors. We do not use contact forms, user accounts, or analytics trackers.</p>
-        <p>If you contact us via WhatsApp, email, or Instagram, the data you share (name, message) is handled solely within those third-party platforms and is not stored on our servers.</p>
+        <p>This website does <strong>not</strong> collect, process or store personal data about its visitors. There are no contact forms, no user accounts, no newsletter, no analytics and no advertising or profiling tools.</p>
+        <p>All fonts, icons, images and scripts are served from this same website. No content is loaded from external providers, so simply browsing these pages does not send your data to any third party.</p>
 
         <div class="policy-divider"></div>
-        <h2>3. Third-Party Platforms</h2>
-        <p>When you click "Get Journey" or "Audio Preview", you are redirected to <strong>Bandcamp</strong> (bandcamp.com), an independent music platform. Any purchase, payment or personal data you share on Bandcamp is governed exclusively by <a href="https://bandcamp.com/privacy" target="_blank" rel="noopener">Bandcamp's Privacy Policy</a>. AstroPhonia does not receive, process or store your payment or personal data.</p>
+        <h2>3. Local Storage</h2>
+        <p>Two values are saved in your browser's localStorage so the site works as expected:</p>
+        <ul>
+          <li><strong>ap_lang</strong> — the language you selected.</li>
+          <li><strong>ap_cookies</strong> — the record that you have seen the cookie notice.</li>
+        </ul>
+        <p>These are technical values only. They stay on your device, are never sent to any server, and you can delete them at any time from your browser settings. Full details in our <a href="cookies.html">Cookie Policy</a>.</p>
 
         <div class="policy-divider"></div>
-        <h2>4. Cookies</h2>
-        <p>This site uses only essential cookies necessary for basic functionality (such as remembering your language preference). No advertising, tracking or analytical cookies are used. See our <a href="cookies.html">Cookie Policy</a> for full details.</p>
+        <h2>4. Hosting and Server Logs</h2>
+        <p>Like any website, this one is delivered by a hosting provider whose servers may record technical access data — including IP addresses — for security and operational purposes. This processing is carried out by the provider under its own privacy terms, and is necessary for the website to be reachable at all (legitimate interest, Art. 6(1)(f) GDPR).</p>
 
         <div class="policy-divider"></div>
-        <h2>5. Your Rights (GDPR)</h2>
-        <p>As this site does not process personal data, the GDPR rights of access, rectification, erasure, portability and objection do not apply in practice. However, if you believe we hold any data about you, please contact us at <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a> and we will respond within 30 days.</p>
+        <h2>5. Third-Party Platforms</h2>
+        <p>This site links out to external services: <strong>Spotify, YouTube, Amazon Music, Bandcamp, Instagram and WhatsApp</strong>. These links only open when you click them. From that moment you are on those platforms, and their own privacy policies apply. AstroPhonia does not receive, process or store any data you share there, including payment data.</p>
 
         <div class="policy-divider"></div>
-        <h2>6. Changes to This Policy</h2>
-        <p>We may update this policy at any time. The date at the top of this page reflects the most recent revision.</p>
+        <h2>6. Your Rights</h2>
+        <p>Under the GDPR you have the right to access, rectify, erase, restrict, port and object to the processing of your personal data. Since this website does not collect personal data, in practice there is nothing to access or erase — but if you believe otherwise, write to <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a> and we will reply within 30 days.</p>
+        <p>You also have the right to lodge a complaint with a supervisory authority — in Italy, the Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a>).</p>
 
         <div class="policy-divider"></div>
-        <h2>7. Contact</h2>
+        <h2>7. Changes to This Policy</h2>
+        <p>This policy may be updated at any time. The date at the top of the page always reflects the most recent revision.</p>
+
+        <div class="policy-divider"></div>
+        <h2>8. Contact</h2>
         <p>Email: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a><br />
-        WhatsApp: <a href="https://wa.me/5511971640775">+55 11 97164-0775</a><br />
+        WhatsApp: <a href="https://wa.me/5511971640775" target="_blank" rel="noopener">+55 11 97164-0775</a><br />
         Instagram: <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener">@astrophonia</a></p>
       </div>
 
-      <!-- ── ITALIANO ── -->
+      <!-- ══════════ ITALIANO ══════════ -->
       <div class="policy-section" id="pp-it">
         <h2>1. Titolare del Trattamento</h2>
-        <p>AstroPhonia è gestita dalla sua fondatrice. Per qualsiasi domanda relativa alla privacy, contattaci a: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>Il titolare del trattamento di questo sito è <strong>Luciana Vidal Romano</strong>, titolare del progetto AstroPhonia.<br />
+        Contatto: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>La presente informativa è resa ai sensi del Regolamento (UE) 2016/679 (GDPR). Per i visitatori in Brasile sono riconosciuti anche i corrispondenti diritti previsti dalla Legge 13.709/2018 (LGPD).</p>
 
         <div class="policy-divider"></div>
         <h2>2. Dati Raccolti</h2>
-        <p>Questo sito web <strong>non</strong> raccoglie, elabora o archivia dati personali dei visitatori. Non utilizziamo moduli di contatto, account utente o tracker di analisi.</p>
-        <p>Se ci contatti tramite WhatsApp, email o Instagram, i dati condivisi (nome, messaggio) sono gestiti esclusivamente all'interno di quelle piattaforme e non vengono archiviati sui nostri server.</p>
+        <p>Questo sito <strong>non</strong> raccoglie, elabora o conserva dati personali dei visitatori. Non sono presenti moduli di contatto, account utente, newsletter, strumenti di analisi né strumenti pubblicitari o di profilazione.</p>
+        <p>Font, icone, immagini e script sono serviti da questo stesso sito. Nessun contenuto viene caricato da fornitori esterni: la semplice navigazione non trasmette quindi i tuoi dati a terze parti.</p>
 
         <div class="policy-divider"></div>
-        <h2>3. Piattaforme di Terze Parti</h2>
-        <p>Cliccando su "Ottieni il Viaggio" o "Anteprima Audio", sarai reindirizzato a <strong>Bandcamp</strong> (bandcamp.com). Qualsiasi acquisto, pagamento o dato personale condiviso su Bandcamp è regolato esclusivamente dalla <a href="https://bandcamp.com/privacy" target="_blank" rel="noopener">Privacy Policy di Bandcamp</a>. AstroPhonia non riceve, elabora o archivia i tuoi dati di pagamento o personali.</p>
+        <h2>3. Archiviazione Locale</h2>
+        <p>Nel localStorage del tuo browser vengono salvati due valori necessari al funzionamento del sito:</p>
+        <ul>
+          <li><strong>ap_lang</strong> — la lingua che hai scelto.</li>
+          <li><strong>ap_cookies</strong> — il fatto che hai preso visione dell'avviso sui cookie.</li>
+        </ul>
+        <p>Si tratta di valori esclusivamente tecnici. Restano sul tuo dispositivo, non vengono mai inviati ad alcun server e puoi cancellarli in qualsiasi momento dalle impostazioni del browser. Tutti i dettagli nella <a href="cookies.html">Cookie Policy</a>.</p>
 
         <div class="policy-divider"></div>
-        <h2>4. Cookie</h2>
-        <p>Questo sito utilizza solo cookie essenziali per la funzionalità di base (come ricordare la lingua scelta). Non vengono utilizzati cookie pubblicitari, di tracciamento o analitici. Consulta la nostra <a href="cookies.html">Cookie Policy</a> per tutti i dettagli.</p>
+        <h2>4. Hosting e Log del Server</h2>
+        <p>Come ogni sito web, anche questo è erogato tramite un fornitore di hosting i cui server possono registrare dati tecnici di accesso — inclusi gli indirizzi IP — per finalità di sicurezza e funzionamento. Tale trattamento è svolto dal fornitore secondo le proprie condizioni ed è necessario perché il sito sia raggiungibile (legittimo interesse, art. 6, par. 1, lett. f, GDPR).</p>
 
         <div class="policy-divider"></div>
-        <h2>5. I Tuoi Diritti (GDPR)</h2>
-        <p>Poiché questo sito non tratta dati personali, i diritti GDPR di accesso, rettifica, cancellazione, portabilità e opposizione non si applicano in pratica. Se tuttavia ritieni che deteniamo dati su di te, contattaci a <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a> e risponderemo entro 30 giorni.</p>
+        <h2>5. Piattaforme di Terze Parti</h2>
+        <p>Il sito contiene collegamenti verso servizi esterni: <strong>Spotify, YouTube, Amazon Music, Bandcamp, Instagram e WhatsApp</strong>. I collegamenti si aprono solo se li clicchi. Da quel momento ti trovi su quelle piattaforme e si applicano le loro informative privacy. AstroPhonia non riceve, non elabora e non conserva alcun dato che tu condivida lì, compresi i dati di pagamento.</p>
 
         <div class="policy-divider"></div>
-        <h2>6. Modifiche a Questa Policy</h2>
-        <p>Potremmo aggiornare questa policy in qualsiasi momento. La data in cima a questa pagina riflette la revisione più recente.</p>
+        <h2>6. I Tuoi Diritti</h2>
+        <p>Ai sensi del GDPR hai diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione al trattamento dei tuoi dati personali. Poiché questo sito non raccoglie dati personali, in pratica non vi è nulla da consultare o cancellare; se ritieni diversamente, scrivi a <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a> e riceverai risposta entro 30 giorni.</p>
+        <p>Hai inoltre il diritto di proporre reclamo all'autorità di controllo: in Italia il Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a>).</p>
 
         <div class="policy-divider"></div>
-        <h2>7. Contatto</h2>
+        <h2>7. Modifiche a Questa Informativa</h2>
+        <p>La presente informativa può essere aggiornata in qualsiasi momento. La data in cima alla pagina riporta sempre la revisione più recente.</p>
+
+        <div class="policy-divider"></div>
+        <h2>8. Contatto</h2>
         <p>Email: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a><br />
-        WhatsApp: <a href="https://wa.me/5511971640775">+55 11 97164-0775</a><br />
+        WhatsApp: <a href="https://wa.me/5511971640775" target="_blank" rel="noopener">+55 11 97164-0775</a><br />
         Instagram: <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener">@astrophonia</a></p>
       </div>
 
-      <!-- ── PORTUGUÊS ── -->
+      <!-- ══════════ PORTUGUÊS ══════════ -->
       <div class="policy-section" id="pp-pt">
         <h2>1. Responsável pelo Tratamento</h2>
-        <p>A AstroPhonia é operada pela sua fundadora. Para quaisquer dúvidas relacionadas à privacidade, entre em contato: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>A responsável pelo tratamento de dados deste site é <strong>Luciana Vidal Romano</strong>, titular do projeto AstroPhonia.<br />
+        Contato: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a></p>
+        <p>Esta política é emitida nos termos do Regulamento (UE) 2016/679 (GDPR). Para visitantes no Brasil, são igualmente reconhecidos os direitos correspondentes previstos na Lei 13.709/2018 (LGPD).</p>
 
         <div class="policy-divider"></div>
         <h2>2. Dados Coletados</h2>
-        <p>Este site <strong>não</strong> coleta, processa ou armazena nenhum dado pessoal dos seus visitantes. Não utilizamos formulários de contato, contas de usuário ou rastreadores de análise.</p>
-        <p>Se você entrar em contato via WhatsApp, e-mail ou Instagram, os dados compartilhados (nome, mensagem) são tratados exclusivamente dentro dessas plataformas e não são armazenados nos nossos servidores.</p>
+        <p>Este site <strong>não</strong> coleta, processa ou armazena dados pessoais dos visitantes. Não há formulários de contato, contas de usuário, newsletter, ferramentas de análise nem ferramentas de publicidade ou perfilamento.</p>
+        <p>Fontes, ícones, imagens e scripts são servidos por este próprio site. Nenhum conteúdo é carregado de fornecedores externos — portanto, apenas navegar por estas páginas não transmite seus dados a terceiros.</p>
 
         <div class="policy-divider"></div>
-        <h2>3. Plataformas de Terceiros</h2>
-        <p>Ao clicar em "Obter Jornada" ou "Prévia do Áudio", você será redirecionado para o <strong>Bandcamp</strong> (bandcamp.com). Qualquer compra, pagamento ou dado pessoal que você compartilhar no Bandcamp é regido exclusivamente pela <a href="https://bandcamp.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Bandcamp</a>. A AstroPhonia não recebe, processa ou armazena seus dados de pagamento ou pessoais.</p>
+        <h2>3. Armazenamento Local</h2>
+        <p>Dois valores são salvos no localStorage do seu navegador para que o site funcione corretamente:</p>
+        <ul>
+          <li><strong>ap_lang</strong> — o idioma que você escolheu.</li>
+          <li><strong>ap_cookies</strong> — o registro de que você viu o aviso de cookies.</li>
+        </ul>
+        <p>São valores exclusivamente técnicos. Permanecem no seu dispositivo, nunca são enviados a nenhum servidor e podem ser apagados a qualquer momento nas configurações do navegador. Detalhes completos na <a href="cookies.html">Política de Cookies</a>.</p>
 
         <div class="policy-divider"></div>
-        <h2>4. Cookies</h2>
-        <p>Este site usa apenas cookies essenciais necessários para a funcionalidade básica (como lembrar a preferência de idioma). Não são usados cookies de publicidade, rastreamento ou análise. Consulte nossa <a href="cookies.html">Política de Cookies</a> para mais detalhes.</p>
+        <h2>4. Hospedagem e Registros de Servidor</h2>
+        <p>Como qualquer site, este é entregue por um provedor de hospedagem cujos servidores podem registrar dados técnicos de acesso — incluindo endereços IP — para fins de segurança e funcionamento. Esse tratamento é realizado pelo provedor segundo os próprios termos e é necessário para que o site esteja acessível (interesse legítimo, art. 6.º, n.º 1, alínea f, do GDPR).</p>
 
         <div class="policy-divider"></div>
-        <h2>5. Seus Direitos (LGPD)</h2>
-        <p>Como este site não trata dados pessoais, os direitos previstos na LGPD (acesso, correção, eliminação, portabilidade e oposição) não se aplicam na prática. Porém, se você acreditar que detemos algum dado seu, entre em contato: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a> — responderemos em até 30 dias.</p>
+        <h2>5. Plataformas de Terceiros</h2>
+        <p>O site contém links para serviços externos: <strong>Spotify, YouTube, Amazon Music, Bandcamp, Instagram e WhatsApp</strong>. Esses links só são abertos quando você clica neles. A partir desse momento você está nessas plataformas e passam a valer as políticas de privacidade delas. A AstroPhonia não recebe, não processa e não armazena nenhum dado que você compartilhe lá, incluindo dados de pagamento.</p>
 
         <div class="policy-divider"></div>
-        <h2>6. Alterações nesta Política</h2>
-        <p>Podemos atualizar esta política a qualquer momento. A data no topo desta página reflete a revisão mais recente.</p>
+        <h2>6. Seus Direitos</h2>
+        <p>Nos termos do GDPR, você tem direito de acesso, retificação, eliminação, limitação, portabilidade e oposição ao tratamento dos seus dados pessoais. Como este site não coleta dados pessoais, na prática não há nada a consultar ou eliminar; se você entender de outra forma, escreva para <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a> e receberá resposta em até 30 dias.</p>
+        <p>Você também tem o direito de apresentar reclamação a uma autoridade de controle — na Itália, o Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a>); no Brasil, a ANPD.</p>
 
         <div class="policy-divider"></div>
-        <h2>7. Contato</h2>
+        <h2>7. Alterações nesta Política</h2>
+        <p>Esta política pode ser atualizada a qualquer momento. A data no topo da página reflete sempre a revisão mais recente.</p>
+
+        <div class="policy-divider"></div>
+        <h2>8. Contato</h2>
         <p>E-mail: <a href="mailto:contato@astrophonia.com">contato@astrophonia.com</a><br />
-        WhatsApp: <a href="https://wa.me/5511971640775">+55 11 97164-0775</a><br />
+        WhatsApp: <a href="https://wa.me/5511971640775" target="_blank" rel="noopener">+55 11 97164-0775</a><br />
         Instagram: <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener">@astrophonia</a></p>
       </div>
 
-    </div><!-- /policy-inner -->
-  </div><!-- /policy-page -->
+    </div>
+  </div>
 
-  <!-- FOOTER -->
   <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="images/logo-transparent.png" alt="AstroPhonia" />
-        <span class="footer-brand-text">AstroPhonia</span>
-      </div>
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        <a href="cookies.html" class="footer-link">Cookie Policy</a>
-        <a href="index.html#contact" class="footer-link">Contact</a>
-        <span class="footer-link" style="cursor:default;margin-top:0.5rem;">© 2025 AstroPhonia</span>
-      </div>
-      <div class="footer-credit">
-        <p class="footer-credit-text">Website developed by<br />
-          <a href="https://github.com/livrewebstudio/astrophonia" target="_blank" rel="noopener">LiVRe Web Studium</a>
-        </p>
+    <div class="shell">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/logo-transparent.png" alt="" />
+          <span class="footer-brand-text">AstroPhonia</span>
+        </div>
+        <div class="footer-links">
+          <a href="privacy.html" class="footer-link" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="cookies.html" class="footer-link" data-i18n="footer_cookies">Cookie Policy</a>
+          <a href="index.html#contact" class="footer-link" data-i18n="nav_contact">Contact</a>
+          <span class="footer-link" style="cursor:default;">© 2026 AstroPhonia</span>
+        </div>
+        <div class="footer-credit">
+          <p class="footer-credit-text">
+            <span data-i18n="footer_dev">Website developed by</span><br />
+            <a href="http://livrewebstudio.github.io/livre-web-studio/" target="_blank" rel="noopener">LiVRe Web Studium</a>
+          </p>
+        </div>
       </div>
     </div>
   </footer>
 
 </div>
 
-<script>
-  function showPolicyLang(id, btn) {
-    document.querySelectorAll('.policy-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.policy-lang-tab').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    btn.classList.add('active');
-  }
-</script>
+<div id="footer-bar">
+  <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+  <span class="sep" aria-hidden="true">·</span>
+  <a href="cookies.html" data-i18n="footer_cookies">Cookie Policy</a>
+  <span class="sep" aria-hidden="true">·</span>
+  <span>© 2026 AstroPhonia</span>
+</div>
+
+<script src="i18n.js"></script>
+<script src="policy.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

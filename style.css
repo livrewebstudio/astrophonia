@@ -724,6 +724,29 @@ section { position: relative; z-index: 1; }
   margin: 0 auto 1.8rem;
   line-height: 1.8;
 }
+/* acesso rápido ao streaming, no topo da seção */
+.quick-listen { margin-top: clamp(1.8rem, 4vw, 2.4rem); }
+.quick-listen-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.9rem;
+}
+.platform-row.compact { gap: 0.5rem; }
+.platform-row.compact .platform {
+  padding: 0.55rem 1rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+  gap: 0.45rem;
+}
+.platform-row.compact .platform i { font-size: 0.92rem; }
+@media (max-width: 480px) {
+  .platform-row.compact .platform { padding: 0.5rem 0.8rem; font-size: 0.58rem; }
+  .platform-row.compact .platform i { font-size: 0.85rem; }
+}
+
 .streaming .streaming-free {
   font-family: var(--font-body);
   font-size: 0.6rem;
@@ -757,6 +780,7 @@ section { position: relative; z-index: 1; }
 .platform[data-platform="spotify"]:hover  { color:#1DB954; border-color:#1DB954; box-shadow:0 6px 20px rgba(29,185,84,0.22); }
 .platform[data-platform="youtube"]:hover  { color:#FF3B30; border-color:#FF3B30; box-shadow:0 6px 20px rgba(255,59,48,0.2); }
 .platform[data-platform="amazon"]:hover   { color:#FF9900; border-color:#FF9900; box-shadow:0 6px 20px rgba(255,153,0,0.22); }
+.platform[data-platform="deezer"]:hover   { color:#A238FF; border-color:#A238FF; box-shadow:0 6px 20px rgba(162,56,255,0.22); }
 .platform[data-platform="bandcamp"]:hover { color:#1DA0C3; border-color:#1DA0C3; box-shadow:0 6px 20px rgba(29,160,195,0.22); }
 
 /* nota 432 */

@@ -210,15 +210,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.getElementById('site-wrapper');
   const saved   = typeof getSavedLang === 'function' ? getSavedLang() : null;
 
-  if (saved) {
-    // lingua già scelta: si entra direttamente nel sito
-    applyTranslations(saved);
-    if (splash) { splash.classList.add('hidden'); splash.style.display = 'none'; }
-    if (wrapper) wrapper.hidden = false;
-  } else {
-    applyTranslations('en');
-    if (wrapper && !splash) wrapper.hidden = false;
-  }
+  // Aplica o idioma já escolhido antes (se houver), para que o splash
+  // apareça na língua certa.
+  applyTranslations(saved || 'en');
+
+  // O splash é mostrado SEMPRE, como no site original.
+  // Para pular o splash em quem já escolheu o idioma, troque as duas
+  // linhas abaixo por:
+  //   if (saved && splash) { splash.classList.add('hidden'); splash.style.display = 'none'; }
+  //   if (saved && wrapper) wrapper.hidden = false;
+  if (wrapper && !splash) wrapper.hidden = false;
 
   revealOnScroll();
   initCookieBanner();
